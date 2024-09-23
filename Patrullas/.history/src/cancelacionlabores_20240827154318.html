@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulario de Cancelación de Labores</title>
+    <style>
+      /* Estilos generales para el body */
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+      }
+
+      /* Estilos para el contenedor del formulario */
+      .form-container {
+        background-color: #ffffff;
+        max-width: 600px;
+        margin: 20px auto;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border: 2px solid #ffd200; /* Borde amarillo */
+      }
+
+      /* Estilo para el título del formulario */
+      h1 {
+        text-align: center;
+        color: #333;
+        font-size: 24px;
+        margin-bottom: 20px;
+      }
+
+      /* Estilos para los formularios */
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+      }
+
+      .form-group {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+      }
+
+      .form-group label {
+        font-size: 14px;
+        color: #333;
+        text-align: left;
+        font-weight: bold;
+      }
+
+      .form-group input[type="text"],
+      .form-group input[type="number"],
+      .form-group input[type="time"],
+      .form-group input[type="date"],
+      .form-group select,
+      .form-group input[type="file"],
+      .form-group textarea {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+        font-size: 14px;
+      }
+
+      .form-group input[type="file"] {
+        padding: 3px;
+      }
+
+      .form-group textarea {
+        resize: vertical;
+      }
+
+      .form-group select {
+        padding: 8px;
+      }
+
+      /* Estilo para el botón de envío */
+      button[type="submit"] {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        background-color: #333;
+        color: #ffd200; /* Color amarillo */
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      /* Estilos para el hover en botones */
+      button[type="submit"]:hover {
+        background-color: #555;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="form-container">
+      <h1>Formulario de Cancelación de Labores</h1>
+      <form id="cancelation-form">
+        <div class="form-group">
+          <label for="date">Fecha:</label>
+          <input type="date" id="date" name="date" required />
+        </div>
+        <div class="form-group">
+          <label for="time">Hora:</label>
+          <input type="time" id="time" name="time" required />
+        </div>
+        <div class="form-group">
+          <label for="location">Ubicación:</label>
+          <input
+            type="text"
+            id="location"
+            name="location"
+            value="Ubicación automática"
+            readonly
+          />
+        </div>
+        <div class="form-group">
+          <label for="patrol">Patrulla:</label>
+          <input type="text" id="patrol" name="patrol" required />
+        </div>
+        <div class="form-group">
+          <label for="estate">Hacienda:</label>
+          <input type="text" id="estate" name="estate" required />
+        </div>
+        <div class="form-group">
+          <label for="luck">Suerte:</label>
+          <input type="text" id="luck" name="luck" required />
+        </div>
+        <div class="form-group">
+          <label for="cancelled-task">Labor Cancelada:</label>
+          <select id="cancelled-task" name="cancelled-task" required>
+            <option value="">Seleccione una opción</option>
+            <option value="transformadores">Transformadores</option>
+            <option value="motobombas">Motobombas</option>
+            <option value="chorras">Chorras</option>
+            <option value="semilla">Semilla</option>
+            <option value="frentes de cosecha">Frentes de Cosecha</option>
+            <option value="subsuelo">Subsuelo</option>
+            <option value="preparacion">Preparación</option>
+            <option value="maquinaria amarilla">Maquinaria Amarilla</option>
+            <option value="suerte en consigna">Suerte en Consigna</option>
+            <option value="fertilizacion">Fertilización</option>
+            <option value="caña quemada">Caña Quemada</option>
+            <option value="madurante">Madurante</option>
+            <option value="suministro de combustible">
+              Suministro de Combustible
+            </option>
+            <option value="fumigacion">Fumigación</option>
+            <option value="drones">Drones</option>
+            <option value="servicio de escolta">Servicio de Escolta</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="applied-by">Aplicada por (Propio o Contratista):</label>
+          <select id="applied-by" name="applied-by" required>
+            <option value="propio">Propio</option>
+            <option value="contratista">Contratista</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="name">Nombre de la Persona que lo Realizó:</label>
+          <input type="text" id="name" name="name" required />
+        </div>
+        <div class="form-group">
+          <label for="reason">Motivo de la Cancelación:</label>
+          <textarea id="reason" name="reason" rows="4" required></textarea>
+        </div>
+        <div class="form-group">
+          <label for="cancelled-by">Cancelado por:</label>
+          <input type="text" id="cancelled-by" name="cancelled-by" required />
+        </div>
+        <div class="form-group">
+          <label for="photos">Fotos:</label>
+          <input
+            type="file"
+            id="photos"
+            name="photos"
+            accept="image/*"
+            multiple
+            required
+          />
+        </div>
+        <button type="submit">Enviar</button>
+      </form>
+    </div>
+
+    <script src="cancelacionlabores.js"></script>
+  </body>
+</html>

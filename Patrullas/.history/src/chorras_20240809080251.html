@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulario Chorras</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <img src="imagenes/LOGO.png" alt="Logo" class="logo" />
+      </header>
+      <h1>Formulario Chorras</h1>
+      <form id="chorras-form">
+        <label for="fecha">Fecha:</label>
+        <input type="date" id="fecha" name="fecha" required />
+
+        <label for="hora">Hora:</label>
+        <input type="time" id="hora" name="hora" required />
+
+        <label for="ubicacion">Ubicación:</label>
+        <input type="text" id="ubicacion" name="ubicacion" required />
+
+        <label for="hacienda">Hacienda:</label>
+        <input type="text" id="hacienda" name="hacienda" required />
+
+        <label for="suerte">Suerte:</label>
+        <input type="text" id="suerte" name="suerte" required />
+
+        <label for="novedades">Novedades:</label>
+        <textarea id="novedades" name="novedades" rows="4" required></textarea>
+
+        <label>Apoyo Hacienda:</label>
+        <div class="radio-group">
+          <input type="radio" id="apoyo-si" name="apoyo" value="si" required />
+          <label for="apoyo-si">Sí</label>
+          <input type="radio" id="apoyo-no" name="apoyo" value="no" required />
+          <label for="apoyo-no">No</label>
+        </div>
+
+        <div id="apoyo-nombre" style="display: none">
+          <label for="nombre-apoyo">Nombre del Apoyo de la Hacienda:</label>
+          <input type="text" id="nombre-apoyo" name="nombre-apoyo" />
+        </div>
+
+        <label for="imagenes">Cargar Imágenes:</label>
+        <input
+          type="file"
+          id="imagenes"
+          name="imagenes"
+          multiple
+          accept="image/*"
+        />
+
+        <button type="submit">Enviar</button>
+      </form>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const apoyoRadios = document.querySelectorAll('input[name="apoyo"]');
+        const apoyoNombreDiv = document.getElementById("apoyo-nombre");
+
+        apoyoRadios.forEach((radio) => {
+          radio.addEventListener("change", function () {
+            if (this.value === "si") {
+              apoyoNombreDiv.style.display = "block";
+            } else {
+              apoyoNombreDiv.style.display = "none";
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

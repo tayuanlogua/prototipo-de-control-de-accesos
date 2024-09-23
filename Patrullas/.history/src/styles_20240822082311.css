@@ -1,0 +1,143 @@
+/* Estilos generales para el body */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f3f3f3;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+/* Estilo para el logo en el header */
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Centra verticalmente los elementos */
+  gap: 20px; /* Espacio entre los logos */
+  margin-bottom: 20px;
+}
+
+.logo {
+  width: 150px;
+}
+
+.logo-cabana {
+  width: 120px; /* Tamaño del logo de La Cabaña */
+}
+
+/* Estilos para el contenedor principal */
+.login-container {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 800px; /* Ajuste del ancho máximo */
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Estilo para el título */
+h1 {
+  color: #896633; /* PANTONE® 7505 C */
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+/* Estilos para los enlaces de actividades */
+.activities-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.activities-form a {
+  text-decoration: none;
+  color: #896633; /* PANTONE® 7505 C */
+  font-size: 18px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.activities-form a:hover {
+  background-color: #896633; /* PANTONE® 7505 C */
+  color: #ffffff;
+}
+
+/* Estilos para el formulario de actividades */
+#subsuelo-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%; /* Ocupa todo el ancho del contenedor */
+}
+
+#subsuelo-form label {
+  text-align: left;
+  font-size: 14px;
+  color: #f0c60cdc;
+}
+
+#subsuelo-form input[type="text"],
+#subsuelo-form input[type="number"],
+#subsuelo-form select,
+#subsuelo-form input[type="file"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+#subsuelo-form input[type="file"] {
+  padding: 3px; /* Ajuste para que se vea mejor */
+}
+
+/* Estilos para el botón de envío */
+#subsuelo-form button[type="submit"] {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #896633; /* PANTONE® 7505 C */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+/* Estilos para el hover en botones */
+#subsuelo-form button[type="submit"]:hover {
+  background-color: #8cc63f; /* PANTONE® 376 C */
+}
+
+/* Responsive design para dispositivos móviles */
+@media (max-width: 480px) {
+  .login-container {
+    width: 95%;
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+
+  #subsuelo-form input[type="text"],
+  #subsuelo-form input[type="number"],
+  #subsuelo-form select,
+  #subsuelo-form input[type="file"],
+  #subsuelo-form button[type="submit"] {
+    font-size: 14px;
+  }
+}

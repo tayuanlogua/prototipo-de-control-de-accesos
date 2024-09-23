@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulario de Bloqueo de Vías</title>
+    <style> 
+    /* Estilos generales */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  background-color: #f4f4f4; /* Fondo gris claro */
+}
+
+header {
+  background-color: #FFD200;
+  padding: 20px;
+}
+
+.logo {
+  max-width: 150px;
+  height: auto;
+  display: inline-block;
+}
+
+/* Contenedor del formulario */
+.form-container {
+  max-width: 600px;
+  margin: 20px auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  font-size: 1.5em;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Estilos para el formulario */
+label {
+  display: block;
+  text-align: left;
+  margin-bottom: 8px;
+  color: #333;
+  font-size: 1em; /* Tamaño de fuente más grande */
+  font-weight: 500; /* Peso de fuente ligeramente reducido */
+}
+
+input[type="text"],
+select,
+input[type="file"],
+textarea {
+  width: 80%; /* Ajuste para que el campo sea más grande */
+  padding: 10px; /* Padding aumentado para hacer los campos más altos */
+  margin-bottom: 20px; /* Espaciado adicional */
+  border: 2px solid #ccc; /* Borde más grueso */
+  border-radius: 8px; /* Bordes más redondeados */
+  font-size: 1em; /* Tamaño de fuente más grande */
+  background-color: #f9f9f9;
+  color: #333; /* Color gris claro para el texto */
+  font-weight: 400; /* Peso de fuente ligeramente reducido */
+  box-sizing: border-box; /* Asegura que el padding y border no afecten el tamaño total del elemento */
+}
+
+textarea {
+  resize: vertical; /* Permite redimensionar verticalmente el área de texto */
+}
+
+/* Estilos de enfoque */
+input[type="text"]:focus,
+select:focus,
+input[type="file"]:focus,
+textarea:focus {
+  outline: none;
+  border-color: #FFD200;
+  background-color: #fff; /* Hace que se resalten mejor al enfocarse */
+}
+
+input[type="submit"] {
+  background-color: #FFD200;
+  color: rgb(58, 56, 56);
+  border: none;
+  padding: 8px 20px; /* Padding aumentado para que el botón sea más grande */
+  font-size: 1.1em; /* Tamaño de fuente más grande */
+  border-radius: 8px; /* Bordes más redondeados */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 80%;
+  font-weight: 500; /* Peso de fuente ligeramente reducido */
+}
+
+input[type="submit"]:hover {
+  background-color: #464749;
+  color: rgb(228, 217, 217);
+}
+
+/* Estilos para los botones de navegación */
+.nav-buttons {
+  margin-top: 20px;
+}
+
+.back-button {
+  display: inline-block;
+  padding: 8px 20px; /* Aumentar padding para más espacio en el botón */
+  background-color: #FFD200;
+  color: rgb(58, 56, 56);
+  border-radius: 8px; /* Bordes más redondeados */
+  text-decoration: none;
+  font-size: 1.1em; /* Tamaño de fuente más grande */
+  transition: background-color 0.3s ease;
+  margin: 10px 0;
+  width: 75%;
+  text-align: center;
+  font-weight: 500; /* Peso de fuente ligeramente reducido */
+}
+
+.back-button:hover {
+  background-color: #464749;
+  color: rgb(228, 217, 217);
+}
+
+/* Adaptaciones responsivas */
+@media (max-width: 768px) {
+  .form-container {
+    padding: 10px;
+  }
+
+  input[type="submit"],
+  .back-button {
+    width: 100%;
+  }
+
+  input[type="text"],
+  select,
+  input[type="file"],
+  textarea {
+    width: 95%; /* Hacer los campos más anchos en pantallas pequeñas */
+  }
+}
+
+
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <img src="imagenes/LOGO.png" alt="Logo" class="logo" />
+    </header>
+
+    <div class="form-container">
+      <h1>Formulario de Bloqueo de Vías</h1>
+      <form
+        id="bloqueoForm"
+        action="process_bloqueo.php"
+        method="POST"
+        enctype="multipart/form-data"
+      >
+        <!-- Fecha y Hora (automático) -->
+        <label for="fechaHora">Fecha y Hora:</label>
+        <input type="text" id="fechaHora" name="fechaHora" readonly />
+
+        <!-- Ubicación (automático) -->
+        <label for="ubicacion">Ubicación:</label>
+        <input type="text" id="ubicacion" name="ubicacion" readonly />
+
+        <!-- Ruta Bloqueada -->
+        <label for="rutaBloqueada">Ruta Bloqueada:</label>
+        <input type="text" id="rutaBloqueada" name="rutaBloqueada" required />
+
+        <!-- Causa del Bloqueo -->
+        <label for="causaBloqueo">Causa del Bloqueo:</label>
+        <select id="causaBloqueo" name="causaBloqueo" required>
+          <option value="comunidad">Comunidad</option>
+          <option value="accidente">Accidente</option>
+          <option value="seguridad">Seguridad</option>
+          <option value="deportiva">Deportiva</option>
+        </select>
+
+        <!-- Tramo Bloqueado -->
+        <label for="tramoBloqueado">Tramo Bloqueado:</label>
+        <input
+          type="text"
+          id="tramoBloqueado"
+          name="tramoBloqueado"
+          placeholder="De hasta"
+          required
+        />
+
+        <!-- Equipos en el Bloqueo -->
+        <label for="equiposBloqueo">Equipos en el Bloqueo (puede agregar varios):</label>
+        <div id="equiposContainer">
+          <input type="text" name="equiposBloqueo[]" placeholder="Equipo" />
+        </div>
+        <button type="button" id="addEquipo">Agregar Equipo</button>
+
+        <!-- Alce que Afecta -->
+        <label for="alceAfecta">Alce que Afecta:</label>
+        <input
+          type="text"
+          id="alceAfecta"
+          name="alceAfecta"
+          placeholder="F1 a F6, F3 a F19, etc."
+          required
+        />
+
+        <!-- Labor que Afecta -->
+        <label for="laborAfecta">Labor que Afecta:</label>
+        <input type="text" id="laborAfecta" name="laborAfecta" required />
+
+        <!-- Descripción -->
+        <label for="descripcion">Descripción:</label>
+        <textarea
+          id="descripcion"
+          name="descripcion"
+          rows="4"
+          required
+        ></textarea>
+
+        <!-- Motivo de la Protesta -->
+        <label for="motivoProtesta">Motivo de la Protesta:</label>
+        <textarea
+          id="motivoProtesta"
+          name="motivoProtesta"
+          rows="4"
+          required
+        ></textarea>
+
+        <!-- Ruta Alterna -->
+        <label for="rutaAlterna">Ruta Alterna:</label>
+        <input type="text" id="rutaAlterna" name="rutaAlterna" required />
+
+        <!-- Foto Opcional -->
+        <label for="foto">Foto (Opcional):</label>
+        <input type="file" id="foto" name="foto" accept="image/*" />
+
+        <!-- Botón de Enviar -->
+        <input type="submit" value="Enviar Formulario" />
+      </form>
+
+      <!-- Botones de Navegación -->
+      <div class="nav-buttons">
+        <a href="novedades.html" class="back-button">Página anterior</a>
+        <a href="iniciosesion.html" class="back-button">Salir</a>
+      </div>
+    </div>
+
+    <script src="bloqueovias.js"></script>
+  </body>
+</html>
+

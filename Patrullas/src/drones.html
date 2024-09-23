@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulario de Drones</title>
+    <style>
+      /* Estilos generales */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  background-color: #f4f4f4; /* Fondo gris claro */
+}
+
+header {
+  background-color: #FFD200;
+  padding: 20px;
+}
+
+.logo {
+  max-width: 150px;
+  height: auto;
+  display: inline-block;
+}
+
+/* Contenedor del formulario */
+.form-container {
+  max-width: 600px;
+  margin: 20px auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  font-size: 1.5em;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Estilos para el formulario */
+label {
+  display: block;
+  text-align: left;
+  margin-bottom: 8px;
+  color: #333;
+  font-size: 1em; /* Tamaño de fuente */
+  font-weight: 500;
+}
+
+input[type="text"],
+input[type="date"],
+select,
+input[type="file"],
+textarea {
+  width: 80%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  font-size: 1em;
+  background-color: #f9f9f9;
+  color: #333;
+  font-weight: 400;
+  box-sizing: border-box;
+}
+
+textarea {
+  resize: vertical;
+}
+
+/* Estilos de enfoque */
+input[type="text"]:focus,
+input[type="date"]:focus,
+select:focus,
+input[type="file"]:focus,
+textarea:focus {
+  outline: none;
+  border-color: #FFD200;
+  background-color: #fff;
+}
+
+/* Estilos para los grupos de radio buttons */
+.radio-group {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.radio-group label {
+  margin-right: 10px;
+}
+
+input[type="radio"] {
+  margin-right: 5px;
+}
+
+/* Estilo para los enlaces que actúan como botones */
+a.back-button {
+  display: inline-block;
+  text-align: center;
+  color: #181717; /* Color del texto */
+  background-color: #FFD200; /* Color de fondo amarillo */
+  padding: 10px 20px;
+  margin: 10px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+  border: 1px solid #FFD200; /* Borde del mismo color que el fondo */
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Cambiar el color de fondo y texto al pasar el ratón sobre el enlace */
+a.back-button:hover {
+  background-color: #FFC107; /* Un amarillo más oscuro para el hover */
+  color: #000000; /* Cambiar texto a negro para contraste */
+}
+
+/* Opcional: Estilo para el enfoque en el enlace (para accesibilidad) */
+a.back-button:focus {
+  outline: 5px solid #000000; /* Un contorno negro para el enfoque */
+  outline-offset: 2px;
+}
+
+/* Adaptaciones responsivas */
+@media (max-width: 768px) {
+  .form-container {
+    padding: 10px;
+  }
+
+  input[type="submit"],
+  .button-container button {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  input[type="text"],
+  input[type="date"],
+  select,
+  input[type="file"],
+  textarea {
+    width: 95%;
+  }
+}
+
+    </style>
+    </head>
+  <body>
+      <header class="header">
+          <img src="imagenes/LOGO.png" alt="Logo" class="logo" />
+      </header>
+        <div class="form-container">
+          <h1>Formulario de Drones</h1>
+          <form id="drones-form">
+  <!-- Fecha y Hora -->
+  <div class="form-group">
+    <label for="fechaHora">Fecha y Hora:</label>
+    <input type="text" id="fechaHora" name="fechaHora" readonly />
+  </div>
+
+  <!-- Ubicación -->
+  <div class="form-group">
+    <label for="ubicacion">Ubicación:</label>
+    <input type="text" id="ubicacion" name="ubicacion" readonly />
+  </div>
+        
+            <div class="form-group">
+              <label for="distrito">Distrito:</label>
+              <select id="distrito" name="distrito" required>
+                  <option value="">Seleccione Distrito</option>
+                  <option value="1">Distrito 1</option>
+                  <option value="2">Distrito 2</option>
+                  <option value="3">Distrito 3</option>
+                  <option value="4">Distrito 4</option>
+                  <option value="5">Distrito 5</option>
+              </select>
+          </div>
+          <div class="form-group">
+              <label for="hacienda">Hacienda:</label>
+              <select id="hacienda" name="hacienda" required>
+                  <option value="">Seleccione Hacienda</option>
+              </select>
+          </div>
+          <div class="form-group">
+              <label for="suerte">Suerte:</label>
+              <input type="text" id="suerte" name="suerte" required readonly />
+          </div>
+          <div class="form-group">
+              <label for="numeroSuerte">Seleccione un número del 1 al 100:</label>
+              <select id="numeroSuerte" name="numeroSuerte" required>
+                  <option value="">Seleccione un número</option>
+                  <!-- Opciones del 1 al 100 -->
+                  <!-- Puedes agregar opciones aquí -->
+              </select>
+          </div>
+          <div class="form-group">
+              <label for="letraSuerte">Seleccione una letra de la A a la Z:</label>
+              <select id="letraSuerte" name="letraSuerte" required>
+                  <option value="">Seleccione una letra</option>
+                  <!-- Opciones de la A a la Z -->
+                  <!-- Puedes agregar opciones aquí -->
+              </select>
+              <div class="form-group">
+                  <label for="contractor-company">Empresa Contratista</label>
+                  <input type="text" id="contractor-company" name="contractor-company" required />
+              </div>
+              <div class="form-group">
+                  <label for="contractor-supervisor">Cabo de Empresa Contratista</label>
+                  <input type="text" id="contractor-supervisor" name="contractor-supervisor" required />
+              </div>
+              <div class="form-group radio-group">
+                  <label>¿Se realizó?</label>
+                  <input type="radio" id="performed-yes" name="performed" value="si" required />
+                  <label for="performed-yes">Sí</label>
+                  <input type="radio" id="performed-no" name="performed" value="no" required />
+                  <label for="performed-no">No</label>
+              </div>
+              <div class="form-group radio-group">
+                  <label>¿Se efectuó?</label>
+                  <input type="radio" id="executed-yes" name="executed" value="si" required />
+                  <label for="executed-yes">Sí</label>
+                  <input type="radio" id="executed-no" name="executed" value="no" required />
+                  <label for="executed-no">No</label>
+              </div>
+              <div class="form-group">
+                  <label for="observations">Observaciones</label>
+                  <textarea id="observations" name="observations"></textarea>
+              </div>
+              <div class="form-group">
+                  <label for="photo">Foto</label>
+                  <input type="file" id="photo" name="photo" accept="image/*" />
+              </div>
+              <a href="actividadespropias.html" class="back-button">Enviar</a>
+              <a href="actividadespropias.html" class="back-button">Página anterior</a>
+              <a href="iniciosesion.html" class="back-button">Salir</a>
+          </form>
+      </div>
+      <script src="drones.js"></script>
+  
+  </body>
+  </html>
+  

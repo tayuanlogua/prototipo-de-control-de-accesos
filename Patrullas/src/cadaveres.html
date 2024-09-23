@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulario de Cadáveres Encontrados</title>
+    <style>
+      /* Estilos generales */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  background-color: #f4f4f4; /* Fondo gris claro */
+}
+
+header {
+  background-color: #FFD200;
+  padding: 20px;
+}
+
+.logo {
+  max-width: 150px;
+  height: auto;
+  display: inline-block;
+}
+
+/* Contenedor del formulario */
+.form-container {
+  max-width: 600px;
+  margin: 20px auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  font-size: 1.5em;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Estilos para el formulario */
+label {
+  display: block;
+  text-align: left;
+  margin-bottom: 8px;
+  color: #333;
+  font-size: 1em; /* Tamaño de fuente más grande */
+  font-weight: 500; /* Peso de fuente ligeramente reducido */
+}
+
+input[type="text"],
+select,
+input[type="file"] {
+  width: 80%; /* Ajuste para que el campo sea más grande */
+  padding: 10px; /* Padding aumentado para hacer los campos más altos */
+  margin-bottom: 20px; /* Espaciado adicional */
+  border: 2px solid #ccc; /* Borde más grueso */
+  border-radius: 8px; /* Bordes más redondeados */
+  font-size: 1em; /* Tamaño de fuente más grande */
+  background-color: #f9f9f9;
+  color: #333; /* Color gris claro para el texto */
+  font-weight: 400; /* Peso de fuente ligeramente reducido */
+}
+
+input[type="text"]:focus,
+select:focus,
+input[type="file"]:focus {
+  outline: none;
+  border-color: #FFD200;
+  background-color: #fff; /* Hace que se resalten mejor al enfocarse */
+}
+
+input[type="submit"] {
+  background-color: #FFD200;
+  color: rgb(58, 56, 56);
+  border: none;
+  padding: 8px 20px; /* Padding aumentado para que el botón sea más grande */
+  font-size: 1.1em; /* Tamaño de fuente más grande */
+  border-radius: 8px; /* Bordes más redondeados */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 80%;
+  font-weight: 500; /* Peso de fuente ligeramente reducido */
+}
+
+input[type="submit"]:hover {
+  background-color: #464749;
+  color: rgb(228, 217, 217);
+}
+
+/* Estilos para los botones de navegación */
+.nav-buttons {
+  margin-top: 20px;
+}
+
+.back-button {
+  display: inline-block;
+  padding: 8px 20px; /* Aumentar padding para más espacio en el botón */
+  background-color: #FFD200;
+  color: rgb(58, 56, 56);
+  border-radius: 8px; /* Bordes más redondeados */
+  text-decoration: none;
+  font-size: 1.1em; /* Tamaño de fuente más grande */
+  transition: background-color 0.3s ease;
+  margin: 10px 0;
+  width: 75%;
+  text-align: center;
+  font-weight: 500; /* Peso de fuente ligeramente reducido */
+}
+
+.back-button:hover {
+  background-color: #464749;
+  color: rgb(228, 217, 217);
+}
+
+/* Adaptaciones responsivas */
+@media (max-width: 768px) {
+  .form-container {
+    padding: 10px;
+  }
+
+  input[type="submit"],
+  .back-button {
+    width: 100%;
+  }
+
+  input[type="text"],
+  select,
+  input[type="file"] {
+    width: 95%; /* Hacer los campos más anchos en pantallas pequeñas */
+  }
+}
+
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <img src="imagenes/LOGO.png" alt="Logo" class="logo" />
+    </header>
+
+    <div class="form-container">
+      <h1>Formulario de Cadáveres Encontrados</h1>
+      <form
+        id="cadaveresForm"
+        action="process_cadaveres.php"
+        method="POST"
+        enctype="multipart/form-data"
+      >
+        <!-- Fecha (automática) -->
+        <label for="fechaHora">Fecha y Hora:</label>
+        <input type="text" id="fechaHora" name="fechaHora" readonly />
+
+        <!-- Ubicación (automática) -->
+        <label for="ubicacion">Ubicación:</label>
+        <input type="text" id="ubicacion" name="ubicacion" readonly />
+
+        <!-- Distrito -->
+        <label for="distrito">Distrito:</label>
+        <select id="distrito" name="distrito" required>
+          <option value="">Seleccione</option>
+          <option value="1">Distrito 1</option>
+          <option value="2">Distrito 2</option>
+          <option value="3">Distrito 3</option>
+          <option value="4">Distrito 4</option>
+          <option value="5">Distrito 5</option>
+          <option value="proveedores">Proveedores</option>
+        </select>
+
+        <!-- Hacienda (cargada dinámicamente) -->
+        <label for="hacienda">Hacienda:</label>
+        <select id="hacienda" name="hacienda" required>
+          <option value="">Seleccione Distrito primero</option>
+        </select>
+
+        <!-- Suerte (cargada dinámicamente) -->
+        <label for="suerte">Suerte:</label>
+        <input type="text" id="suerte" name="suerte" required readonly />
+
+        <label for="numeroSuerte">Seleccione un número del 1 al 100:</label>
+        <select id="numeroSuerte"></select>
+
+        <label for="letraSuerte">Seleccione una letra de la A a la Z:</label>
+        <select id="letraSuerte"></select>
+
+        <!-- Sexo -->
+        <label for="sexo">Sexo:</label>
+        <select id="sexo" name="sexo" required>
+          <option value="femenino">Femenino</option>
+          <option value="masculino">Masculino</option>
+        </select>
+
+        <!-- Raza -->
+        <label for="raza">Raza:</label>
+        <select id="raza" name="raza" required>
+          <option value="negro">Negro</option>
+          <option value="blanco">Blanco</option>
+          <option value="indio">Indio</option>
+          <option value="mulato">Mulato</option>
+        </select>
+
+        <!-- Reportado por Funcionario -->
+        <label for="funcionarioFicha">Ficha del Funcionario:</label>
+        <input type="text" id="funcionarioFicha" name="funcionarioFicha" required />
+
+        <label for="funcionarioCargo">Cargo del Funcionario:</label>
+        <input type="text" id="funcionarioCargo" name="funcionarioCargo" required />
+
+        <label for="funcionarioNombre">Nombre del Funcionario:</label>
+        <input type="text" id="funcionarioNombre" name="funcionarioNombre" required />
+
+        <label for="comunidad">Comunidad:</label>
+        <input type="text" id="comunidad" name="comunidad" required />
+
+        <!-- Autoridad que Conduce el Caso -->
+        <label for="autoridadCargo">Autoridad que Conduce el Caso:</label>
+        <select id="autoridadCargo" name="autoridadCargo" required>
+          <option value="ponal">Policía Nacional</option>
+          <option value="ejercito">Ejército Nacional</option>
+          <option value="insponal">Institución Nacional</option>
+        </select>
+
+        <!-- Cargo de la Autoridad -->
+        <label for="cargoAutoridad">Cargo de la Autoridad:</label>
+        <input type="text" id="cargoAutoridad" name="cargoAutoridad" required />
+
+        <!-- Nombre de la Autoridad -->
+        <label for="nombreAutoridad">Nombre de la Autoridad:</label>
+        <input type="text" id="nombreAutoridad" name="nombreAutoridad" required />
+
+        <!-- Unidad -->
+        <label for="unidad">Unidad:</label>
+        <input type="text" id="unidad" name="unidad" required />
+
+        <!-- Foto Opcional -->
+        <label for="foto">Foto (Opcional):</label>
+        <input type="file" id="foto" name="foto" accept="image/*" />
+
+        <!-- Botón de Enviar -->
+        <input type="submit" value="Enviar Formulario" />
+      </form>
+    </div>
+
+    <script src="cadaveres.js"></script>
+  </body>
+</html>
+

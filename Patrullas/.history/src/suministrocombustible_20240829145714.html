@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulario de Suministro de Combustible</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <img src="imagenes/LOGO.png" alt="Logo" class="logo" />
+      <h1>Formulario Madurante</h1>
+    </header>
+    <div class="form-container">
+      <h1>Formulario de Suministro de Combustible</h1>
+      <form id="fuel-supply-form">
+        <div class="form-group">
+          <!-- Fecha (automática) -->
+          <label for="fechaHora">Fecha y Hora:</label>
+          <input type="text" id="fechaHora" name="fechaHora" readonly />
+        </div>
+        <div class="form-group">
+          <!-- Ubicación (automática) -->
+          <label for="ubicacion">Ubicación:</label>
+          <input type="text" id="ubicacion" name="ubicacion" readonly />
+        </div>
+        <!-- Distrito -->
+        <div class="form-group">
+          <label for="distrito">Distrito:</label>
+          <select id="distrito" name="distrito" required>
+            <option value="">Seleccione Distrito</option>
+            <option value="1">Distrito 1</option>
+            <option value="2">Distrito 2</option>
+            <option value="3">Distrito 3</option>
+            <option value="4">Distrito 4</option>
+            <option value="5">Distrito 5</option>
+          </select>
+        </div>
+        <!-- Hacienda -->
+        <div class="form-group">
+          <label for="hacienda">Hacienda:</label>
+          <select id="hacienda" name="hacienda" required>
+            <option value="">Seleccione Hacienda</option>
+            <!-- Aquí puedes agregar las opciones de haciendas -->
+          </select>
+        </div>
+        <!-- Suerte -->
+        <div class="form-group">
+          <label for="suerte">Suerte:</label>
+          <input type="text" id="suerte" name="suerte" required readonly />
+        </div>
+        <div class="form-group">
+          <label for="numeroSuerte">Seleccione un número del 1 al 100:</label>
+          <select id="numeroSuerte" name="numeroSuerte" required>
+            <!-- Opciones del 1 al 100 -->
+            <option value="">Seleccione un número</option>
+            <!-- Aquí puedes agregar las opciones -->
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="letraSuerte">Seleccione una letra de la A a la Z:</label>
+          <select id="letraSuerte" name="letraSuerte" required>
+            <!-- Opciones de A a Z -->
+            <option value="">Seleccione una letra</option>
+            <!-- Aquí puedes agregar las opciones -->
+          </select>
+        </div>
+        <!-- Resto de campos -->
+        <div class="form-group">
+          <label for="patrol">Patrulla:</label>
+          <input type="text" id="patrol" name="patrol" required />
+        </div>
+        <div class="form-group">
+          <label for="route">Ruta de Suministro:</label>
+          <select id="route" name="route" required>
+            <option value="">Seleccione una opción</option>
+            <option value="norte">Norte</option>
+            <option value="sur">Sur</option>
+            <option value="centro">Centro</option>
+            <option value="mecanizado">Mecanizado</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="operator">Operario:</label>
+          <input type="text" id="operator" name="operator" required />
+        </div>
+        <div class="form-group">
+          <label for="vehicle-plate">Placa del Vehículo:</label>
+          <input type="text" id="vehicle-plate" name="vehicle-plate" required />
+        </div>
+        <div class="form-group">
+          <label for="end-time">Hora de Término:</label>
+          <input type="time" id="end-time" name="end-time" required />
+        </div>
+        <div class="form-group">
+          <label for="observations">Observaciones:</label>
+          <textarea id="observations" name="observations" rows="4"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="accompaniment">Acompañamiento en la Hacienda:</label>
+          <input type="text" id="accompaniment" name="accompaniment" />
+        </div>
+        <div class="form-group">
+          <label for="photos">Fotos:</label>
+          <input
+            type="file"
+            id="photos"
+            name="photos"
+            accept="image/*"
+            multiple
+            required
+          />
+        </div>
+        <button type="submit">Enviar</button>
+      </form>
+    </div>
+
+    <script src="suministrocombustible.js"></script>
+  </body>
+</html>

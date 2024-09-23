@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulario de Suministro de Combustible</title>
+  <style> 
+    /* Estilos generales */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  background-color: #f4f4f4; /* Fondo gris claro */
+}
+
+header {
+  background-color: #FFD200;
+  padding: 20px;
+}
+
+.logo {
+  max-width: 150px;
+  height: auto;
+  display: inline-block;
+}
+
+/* Contenedor del formulario */
+.form-container {
+  max-width: 600px;
+  margin: 20px auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  font-size: 1.5em;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Estilos para el formulario */
+label {
+  display: block;
+  text-align: left;
+  margin-bottom: 8px;
+  color: #333;
+  font-size: 1em; /* Tamaño de fuente */
+  font-weight: 500;
+}
+
+input[type="text"],
+select,
+input[type="file"],
+textarea {
+  width: 80%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  font-size: 1em;
+  background-color: #f9f9f9;
+  color: #333;
+  font-weight: 400;
+  box-sizing: border-box;
+}
+
+textarea {
+  resize: vertical;
+}
+
+/* Estilos de enfoque */
+input[type="text"]:focus,
+select:focus,
+input[type="file"]:focus,
+textarea:focus {
+  outline: none;
+  border-color: #FFD200;
+  background-color: #fff;
+}
+
+input[type="submit"] {
+  background-color: #FFD200; /* Color amarillo */
+  color: rgb(58, 56, 56); /* Color del texto */
+  border: none;
+  padding: 8px 20px;
+  font-size: 1.1em;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  width: 80%;
+  font-weight: 500;
+}
+
+input[type="submit"]:hover {
+  background-color: #FFD200; /* Mantiene el fondo amarillo */
+  color: rgb(58, 56, 56); /* Mantiene el color del texto */
+}
+/* Estilos para los botones de navegación */
+.button-container {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.button-container button {
+  padding: 8px 20px;
+  background-color: #FFD200;
+  color: rgb(58, 56, 56);
+  border-radius: 8px;
+  border: none;
+  font-size: 1.1em;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+  width: 48%;
+}
+
+.button-container button:hover {
+  background-color: #464749;
+  color: rgb(228, 217, 217);
+}
+
+/* Adaptaciones responsivas */
+@media (max-width: 768px) {
+  .form-container {
+    padding: 10px;
+  }
+
+  input[type="submit"],
+  .button-container button {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  input[type="text"],
+  select,
+  input[type="file"],
+  textarea {
+    width: 95%;
+  }
+}
+
+ /* Estilo general para los enlaces que actúan como botones */
+a.back-button {
+  display: inline-block;
+  text-align: center;
+  color: #181717;
+  background-color: #FFD200; /* Color de fondo amarillo */
+  padding: 10px 20px;
+  margin: 10px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+  border: 1px solid #FFD200; /* Borde del mismo color que el fondo */
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Cambiar el color de fondo y texto al pasar el ratón sobre el enlace */
+a.back-button:hover {
+  background-color: #FFC107; /* Un amarillo más oscuro para el hover */
+  color: #000000; /* Cambiar texto a negro para contraste */
+}
+
+/* Opcional: Estilo para el enfoque en el enlace (para accesibilidad) */
+a.back-button:focus {
+  outline: 2px solid #000000; /* Un contorno negro para el enfoque */
+  outline-offset: 2px;
+}
+
+
+      </style>
+    </head>
+    <body>
+    
+      <header class="header">
+        <img src="imagenes/LOGO.png" alt="Logo" class="logo" />
+      </header>
+    
+      <div class="form-container">
+        <h1>Formulario de Suministro de Combustible</h1>
+        <form id="fuel-supply-form">
+          <!-- Fecha y Hora -->
+          <div class="form-group">
+            <label for="fechaHora">Fecha y Hora:</label>
+            <input type="text" id="fechaHora" name="fechaHora" readonly />
+          </div>
+    
+          <!-- Ubicación -->
+          <div class="form-group">
+            <label for="ubicacion">Ubicación:</label>
+            <input type="text" id="ubicacion" name="ubicacion" readonly />
+          </div>
+    
+          <!-- Distrito -->
+          <div class="form-group">
+            <label for="distrito">Distrito:</label>
+            <select id="distrito" name="distrito" required>
+              <option value="">Seleccione Distrito</option>
+              <option value="1">Distrito 1</option>
+              <option value="2">Distrito 2</option>
+              <option value="3">Distrito 3</option>
+              <option value="4">Distrito 4</option>
+              <option value="5">Distrito 5</option>
+            </select>
+          </div>
+    
+          <!-- Hacienda -->
+          <div class="form-group">
+            <label for="hacienda">Hacienda:</label>
+            <select id="hacienda" name="hacienda" required>
+              <option value="">Seleccione Hacienda</option>
+            </select>
+          </div>
+    
+          <!-- Suerte -->
+          <div class="form-group">
+            <label for="suerte">Suerte:</label>
+            <input type="text" id="suerte" name="suerte" required readonly />
+          </div>
+    
+          <!-- Número de Suerte -->
+          <div class="form-group">
+            <label for="numeroSuerte">Seleccione un número del 1 al 100:</label>
+            <select id="numeroSuerte" name="numeroSuerte" required>
+              <option value="">Seleccione un número</option>
+              <!-- Aquí puedes agregar las opciones del 1 al 100 -->
+            </select>
+          </div>
+    
+          <!-- Letra de Suerte -->
+          <div class="form-group">
+            <label for="letraSuerte">Seleccione una letra de la A a la Z:</label>
+            <select id="letraSuerte" name="letraSuerte" required>
+              <option value="">Seleccione una letra</option>
+              <!-- Aquí puedes agregar las opciones de la A a la Z -->
+            </select>
+          </div>
+    
+          <!-- Patrulla -->
+          <div class="form-group">
+            <label for="patrol">Patrulla:</label>
+            <input type="text" id="patrol" name="patrol" required />
+          </div>
+    
+          <!-- Ruta de Suministro -->
+          <div class="form-group">
+            <label for="route">Ruta de Suministro:</label>
+            <select id="route" name="route" required>
+              <option value="">Seleccione una opción</option>
+              <option value="norte">Norte</option>
+              <option value="sur">Sur</option>
+              <option value="centro">Centro</option>
+              <option value="mecanizado">Mecanizado</option>
+            </select>
+          </div>
+    
+          <!-- Operario -->
+          <div class="form-group">
+            <label for="operator">Operario:</label>
+            <input type="text" id="operator" name="operator" required />
+          </div>
+    
+          <!-- Placa del Vehículo -->
+          <div class="form-group">
+            <label for="vehicle-plate">Placa del Vehículo:</label>
+            <input type="text" id="vehicle-plate" name="vehicle-plate" required />
+          </div>
+    
+          <!-- Hora de Término -->
+          <div class="form-group">
+            <label for="end-time">Hora de Término:</label>
+            <input type="time" id="end-time" name="end-time" required />
+          </div>
+    
+          <!-- Observaciones -->
+          <div class="form-group">
+            <label for="observations">Observaciones:</label>
+            <textarea id="observations" name="observations" rows="4"></textarea>
+          </div>
+    
+          <!-- Acompañamiento en la Hacienda -->
+          <div class="form-group">
+            <label for="accompaniment">Acompañamiento en la Hacienda:</label>
+            <input type="text" id="accompaniment" name="accompaniment" />
+          </div>
+    
+          <!-- Fotos -->
+          <div class="form-group">
+            <label for="photos">Fotos:</label>
+            <input type="file" id="photos" name="photos" accept="image/*" multiple required />
+          </div>
+          <a href="actividadespropias.html" class="back-button">Enviar</a>
+          <a href="actividadespropias.html" class="back-button">Pagina anterior</a>
+          <a href="iniciosesion.html" class="back-button">Salir</a>
+          
+          <script src="suministrocombustible.js"></script>
+    </body>
+    </html>

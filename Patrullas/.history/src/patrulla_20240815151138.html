@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulario de Patrullas</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <img src="imagenes/LOGO.png" alt="Logo" class="logo" />
+      <h1>Formulario de Patrullas</h1>
+    </header>
+    <div class="form-container">
+      <form id="patrullas-form">
+        <!-- Selección de Sección -->
+        <div class="form-group">
+          <label for="seccion">Seleccione sección:</label>
+          <select
+            id="seccion"
+            name="seccion"
+            required
+            onchange="mostrarOpciones()"
+          >
+            <option value="">Seleccione una opción</option>
+            <option value="actividad">Actividades Propias</option>
+            <option value="novedad">Novedades</option>
+          </select>
+        </div>
+
+        <!-- Selección de Actividades Propias -->
+        <div id="actividad-section" class="form-group" style="display: none">
+          <label for="actividad-propia">Actividades Propias:</label>
+          <select id="actividad-propia" name="actividad-propia">
+            <option value="">Seleccione una actividad</option>
+            <option value="transformadores">Transformadores</option>
+            <option value="motobombas">Motobombas</option>
+            <option value="chorras">Chorras</option>
+            <option value="semilla">Semilla</option>
+            <option value="frente-cosecha">Frente de Cosecha</option>
+            <option value="subsuelo">Subsuelo</option>
+            <option value="preparacion">Preparación</option>
+            <option value="maquinaria-amarilla">Maquinaria Amarilla</option>
+            <option value="suertes-consigna">Suertes Consigna</option>
+            <option value="cana-en-pie">Caña en Pie</option>
+            <option value="fertilizacion">Fertilización</option>
+            <option value="hurto-cana">Hurto de Caña</option>
+            <option value="fumigacion">Fumigación</option>
+            <option value="drones">Drones</option>
+          </select>
+        </div>
+
+        <!-- Selección de Novedades -->
+        <div id="novedad-section" class="form-group" style="display: none">
+          <label for="novedades">Novedades:</label>
+          <select id="novedades" name="novedades">
+            <option value="">Seleccione una novedad</option>
+            <option value="cadaver">Cadáver</option>
+            <option value="hurtos">Hurtos</option>
+            <option value="bloqueos-comunidades">
+              Bloqueos de Comunidades
+            </option>
+            <option value="cierres-vias">Cierres de Vías</option>
+            <option value="informaciones">Informaciones</option>
+          </select>
+        </div>
+
+        <button type="submit">Entrar</button>
+      </form>
+    </div>
+    <script src="scripts.js"></script>
+  </body>
+</html>

@@ -1,0 +1,108 @@
+/* Estilos generales para el body */
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #f0f0f0; /* Fondo general de la página */
+}
+
+/* Estilos para el contenedor principal */
+.container {
+  width: 80%;
+  max-width: 600px;
+  padding: 20px;
+  background-color: #fff; /* Fondo blanco del contenedor */
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center; /* Centrar el contenido dentro del contenedor */
+}
+
+/* Estilos para el header dentro del contenedor */
+.header {
+  background-color: #ffd200; /* Fondo amarillo para el header */
+  padding: 80px 20px 20px; /* Aumento del padding superior para bajar el logo más */
+  border-radius: 8px;
+  margin-bottom: 20px; /* Espacio debajo del header */
+  display: flex;
+  justify-content: center; /* Centrar el logo horizontalmente */
+  border-bottom: 2px solid #ccc;
+}
+
+.logo {
+  max-width: 150px; /* Tamaño máximo del logo */
+  height: auto;
+}
+
+/* Estilos para el título del formulario */
+h1 {
+  margin-bottom: 20px;
+  color: #000; /* Color negro para el título */
+}
+
+/* Estilos para el formulario */
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centrar el formulario horizontalmente */
+}
+
+.form-group {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #000; /* Color negro para las etiquetas */
+}
+
+input[type="text"],
+input[type="file"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+input[type="radio"] {
+  width: auto;
+  margin-right: 5px;
+}
+
+textarea {
+  resize: vertical;
+}
+
+/* Estilos para el botón */
+button {
+  width: 100%;
+  padding: 10px 15px;
+  background-color: #ffd200; /* Color amarillo */
+  color: #000; /* Texto en negro para el botón */
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #f9c700; /* Amarillo más oscuro para el hover */
+}
+
+/* Estilos para el grupo de radio buttons */
+.radio-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.radio-group label {
+  margin-right: 10px;
+}

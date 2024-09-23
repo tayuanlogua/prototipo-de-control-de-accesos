@@ -1,0 +1,239 @@
+/* Estilos generales para el body */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+/* Estilo para el logo en el header */
+.header {
+  background-color: #ffd200; /* Fondo amarillo para el logo */
+  padding: 10px 0;
+  text-align: center;
+}
+
+.logo {
+  width: 150px;
+  height: auto;
+}
+
+/* Estilos para el contenedor del formulario */
+.form-container,
+#maduranteForm,
+#subsuelo-form,
+#burnt-cane-form,
+#motobombas-form,
+#servicio-de-escolta-form {
+  background-color: #ffffff;
+  max-width: 600px; /* Ajustado al tamaño del formulario */
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid #ffd200; /* Borde amarillo */
+}
+
+/* Estilo para el título del formulario */
+h1 {
+  text-align: center;
+  color: #333;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+/* Estilos para los formularios */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.form-group label {
+  font-size: 14px;
+  color: #333;
+  text-align: left;
+  font-weight: bold;
+}
+
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group input[type="time"],
+.form-group input[type="date"],
+.form-group select,
+.form-group input[type="file"],
+.form-group textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+.form-group input[type="file"] {
+  padding: 3px; /* Ajuste para que se vea mejor */
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+
+.form-group select {
+  padding: 8px;
+}
+
+/* Estilo para el grupo de radio buttons */
+.radio-group {
+  display: flex;
+  justify-content: space-between;
+  max-width: 200px;
+}
+
+.radio-group label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 14px;
+  color: #333;
+}
+
+input[type="radio"] {
+  margin-left: 10px;
+}
+
+/* Estilo para las entradas múltiples */
+.multi-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.multi-input-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.multi-input-item input {
+  flex: 1;
+}
+
+.multi-input-item button {
+  padding: 8px;
+  background-color: #333;
+  color: #ffd200;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Estilo para botón de añadir más */
+button.add-more {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #ffd200;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #333;
+}
+
+button.add-more:hover {
+  background-color: #ffbf00;
+}
+
+/* Estilo para el botón de envío */
+button[type="submit"] {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #333;
+  color: #ffd200; /* Color amarillo para el botón de envío */
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Estilos para el hover en botones */
+button[type="submit"]:hover {
+  background-color: #555;
+}
+
+/* Estilo para los enlaces de actividades */
+.activities-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+.activities-form a {
+  text-decoration: none;
+  color: #ffd200; /* Color amarillo para los enlaces */
+  font-size: 18px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.activities-form a:hover {
+  background-color: #ffd200; /* Color amarillo para el hover */
+  color: #ffffff;
+}
+
+/* Responsive design para dispositivos móviles */
+@media (max-width: 480px) {
+  .form-container,
+  #maduranteForm,
+  #subsuelo-form,
+  #burnt-cane-form,
+  #motobombas-form,
+  #servicio-de-escolta-form {
+    width: 95%;
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+
+  form input[type="text"],
+  form input[type="number"],
+  form input[type="time"],
+  form input[type="date"],
+  form select,
+  form input[type="file"],
+  form textarea,
+  button[type="submit"],
+  .activities-form a {
+    font-size: 14px;
+  }
+}
+
+/* Centrando el contenido hacia abajo para móviles */
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* Alinea los elementos hacia abajo */
+  align-items: center;
+  height: 100vh; /* Ocupa toda la altura de la pantalla */
+  margin: 0;
+  padding: 20px;
+}

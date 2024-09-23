@@ -1,0 +1,167 @@
+/* Estilos generales para el body */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  text-align: center;
+}
+
+/* Estilos para el header */
+header,
+.header {
+  background-color: #ffd200; /* Fondo amarillo */
+  color: white;
+  padding: 20px 10px; /* Corregido el padding */
+  width: 100%;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  border-bottom: 2px solid #ccc;
+}
+
+/* Estilo para el logo en el header general */
+.logo img {
+  width: 100px; /* Ajuste del tamaño del logo general */
+  margin-bottom: 10px;
+}
+
+/* Estilo para el logo en el formulario de inicio de sesión */
+.login-logo {
+  width: 130px; /* Tamaño reducido del logo solo en el formulario de inicio de sesión */
+}
+
+/* Estilos para el contenedor de login */
+.login-container {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin-top: 100px; /* Aumentado el margen superior */
+  text-align: center;
+  width: 300px;
+}
+
+/* Estilos para el formulario de inicio de sesión */
+#login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+#login-form label {
+  font-weight: bold;
+  color: #333;
+}
+
+#login-form input {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+#login-form button {
+  padding: 10px;
+  background-color: #ffd200;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease; /* Transición para el hover */
+}
+
+#login-form button:hover {
+  background-color: #003399;
+}
+
+/* Contenedor central para los iconos */
+.iconos-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 120px; /* Mantener este margen superior */
+}
+
+/* Estilos para el contenedor de cada icono */
+.icono {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 150px;
+  margin: 20px; /* Mantener el margen */
+  text-align: center;
+  vertical-align: top;
+  border: 3px solid #ffd200; /* Borde amarillo para cada icono */
+}
+
+.icono img {
+  width: 80px;
+  height: 80px;
+  border-radius: 10px;
+}
+
+.icono p {
+  margin-top: 10px;
+  font-weight: bold;
+  color: #333;
+  font-size: 16px;
+}
+
+.icono a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.icono a:hover {
+  color: #003399; /* Ajustado el color hover */
+}
+
+/* Ajuste de la posición del formulario */
+.form-container {
+  width: 80%;
+  max-width: 800px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  margin-top: 40px; /* Mantener el margen superior */
+}
+
+/* Estilos para el formulario de actividades propias */
+.activities-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.activities-form a {
+  display: block;
+  padding: 15px;
+  background-color: #ffd200;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 18px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.activities-form a:hover {
+  background-color: #003399;
+  color: white;
+}

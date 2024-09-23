@@ -1,0 +1,166 @@
+/* Estilos generales para el body */
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #f4f4f4; /* Fondo general de la página */
+  text-align: center;
+}
+
+/* Estilos para el header */
+header {
+  background-color: #0044cc;
+  color: white;
+  padding: 20px 0;
+  width: 100%;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  border-bottom: 2px solid #ccc;
+}
+
+.logo img {
+  width: 100px;
+  margin-bottom: 10px;
+}
+
+h1 {
+  margin: 10px 0;
+  font-size: 24px;
+  color: #333;
+}
+
+/* Estilos para el contenedor de los iconos */
+.icono {
+  display: inline-block;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 150px;
+  margin: 10px;
+  text-align: center;
+  vertical-align: top;
+}
+
+.icono img {
+  width: 80px;
+  height: 80px;
+  border-radius: 10px;
+}
+
+.icono p {
+  margin-top: 10px;
+  font-weight: bold;
+  color: #333;
+  font-size: 16px;
+}
+
+/* Estilos para el contenedor del formulario */
+.form-container {
+  width: 80%;
+  max-width: 800px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  margin-top: 120px; /* Ajuste del margen superior para evitar el header fijo y bajar el formulario */
+}
+
+/* Estilos para el formulario */
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Estilos para los grupos de formulario */
+.form-group {
+  width: 100%;
+  max-width: 600px;
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #000;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="number"],
+textarea,
+select,
+input[type="file"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+textarea {
+  resize: vertical;
+}
+
+/* Estilos para los botones de opción (radio) */
+.radio-group {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 600px;
+  margin-bottom: 20px;
+}
+
+button {
+  width: 100%;
+  padding: 10px 15px;
+  background-color: #ffd200; /* Color amarillo */
+  color: #000;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #f9c700; /* Amarillo más oscuro para el hover */
+}
+
+/* Estilos adicionales */
+.form-container {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  width: 300px;
+}
+
+input[type="text"],
+select,
+textarea,
+input[type="file"] {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  background-color: #4caf50;
+  color: white;
+}
+
+button:hover {
+  background-color: #45a049;
+}

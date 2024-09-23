@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulario de Vehiculos Abandonados</title>
+   <style>
+    /* Estilos generales */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  background-color: #f4f4f4; /* Fondo gris claro */
+}
+
+header {
+  background-color: #FFD200;
+  padding: 20px;
+}
+
+.logo {
+  max-width: 150px;
+  height: auto;
+  display: inline-block;
+}
+
+/* Contenedor del formulario */
+.form-container {
+  max-width: 600px;
+  margin: 20px auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  font-size: 1.5em;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Estilos para el formulario */
+label {
+  display: block;
+  text-align: left;
+  margin-bottom: 8px;
+  color: #333;
+  font-size: 1em; /* Tamaño de fuente más grande */
+  font-weight: 500; /* Peso de fuente ligeramente reducido */
+}
+
+input[type="text"],
+select,
+input[type="file"],
+textarea {
+  width: 80%; /* Ajuste para que el campo sea más grande */
+  padding: 10px; /* Padding aumentado para hacer los campos más altos */
+  margin-bottom: 20px; /* Espaciado adicional */
+  border: 2px solid #ccc; /* Borde más grueso */
+  border-radius: 8px; /* Bordes más redondeados */
+  font-size: 1em; /* Tamaño de fuente más grande */
+  background-color: #f9f9f9;
+  color: #333; /* Color gris claro para el texto */
+  font-weight: 400; /* Peso de fuente ligeramente reducido */
+  box-sizing: border-box; /* Asegura que el padding y border no afecten el tamaño total del elemento */
+}
+
+textarea {
+  resize: vertical; /* Permite redimensionar verticalmente el área de texto */
+}
+
+/* Estilos de enfoque */
+input[type="text"]:focus,
+select:focus,
+input[type="file"]:focus,
+textarea:focus {
+  outline: none;
+  border-color: #FFD200;
+  background-color: #fff; /* Hace que se resalten mejor al enfocarse */
+}
+
+input[type="submit"] {
+  background-color: #FFD200;
+  color: rgb(58, 56, 56);
+  border: none;
+  padding: 8px 20px; /* Padding aumentado para que el botón sea más grande */
+  font-size: 1.1em; /* Tamaño de fuente más grande */
+  border-radius: 8px; /* Bordes más redondeados */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 80%;
+  font-weight: 500; /* Peso de fuente ligeramente reducido */
+}
+
+input[type="submit"]:hover {
+  background-color: #464749;
+  color: rgb(228, 217, 217);
+}
+
+/* Estilos para los botones de navegación */
+.nav-buttons {
+  margin-top: 20px;
+}
+
+.back-button {
+  display: inline-block;
+  padding: 8px 20px; /* Aumentar padding para más espacio en el botón */
+  background-color: #FFD200;
+  color: rgb(58, 56, 56);
+  border-radius: 8px; /* Bordes más redondeados */
+  text-decoration: none;
+  font-size: 1.1em; /* Tamaño de fuente más grande */
+  transition: background-color 0.3s ease;
+  margin: 10px 0;
+  width: 75%;
+  text-align: center;
+  font-weight: 500; /* Peso de fuente ligeramente reducido */
+}
+
+.back-button:hover {
+  background-color: #464749;
+  color: rgb(228, 217, 217);
+}
+
+/* Adaptaciones responsivas */
+@media (max-width: 768px) {
+  .form-container {
+    padding: 10px;
+  }
+
+  input[type="submit"],
+  .back-button {
+    width: 100%;
+  }
+
+  input[type="text"],
+  select,
+  input[type="file"],
+  textarea {
+    width: 95%; /* Hacer los campos más anchos en pantallas pequeñas */
+  }
+}
+
+   </style>
+  </head>
+  <body>
+    <header class="header">
+      <img src="imagenes/LOGO.png" alt="Logo" class="logo" />
+    </header>
+
+    <div class="form-container">
+      <h1>Formulario de Vehiculos Abandonados</h1>
+      <form
+        id="abandonadosForm"
+        action="process_abandonados.php"
+        method="POST"
+        enctype="multipart/form-data"
+      >
+        <!-- Fecha y Hora (automático) -->
+        <label for="fechaHora">Fecha y Hora:</label>
+        <input type="text" id="fechaHora" name="fechaHora" readonly />
+
+        <!-- Ubicación (automático) -->
+        <label for="ubicacion">Ubicación:</label>
+        <input type="text" id="ubicacion" name="ubicacion" readonly />
+
+        <!-- Distrito -->
+        <label for="distrito">Distrito:</label>
+        <select id="distrito" name="distrito" required>
+          <option value="">Seleccione Distrito</option>
+          <option value="1">Distrito 1</option>
+          <option value="2">Distrito 2</option>
+          <option value="3">Distrito 3</option>
+          <option value="4">Distrito 4</option>
+          <option value="5">Distrito 5</option>
+        </select>
+
+        <!-- Hacienda (dependiente del Distrito) -->
+        <label for="hacienda">Hacienda:</label>
+        <select id="hacienda" name="hacienda" required>
+          <option value="">Seleccione Hacienda</option>
+        </select>
+
+        <!-- Número de Suerte -->
+        <label for="numeroSuerte">Número de Suerte:</label>
+        <select id="numeroSuerte" name="numeroSuerte" required>
+          <!-- Se llenará dinámicamente -->
+        </select>
+
+        <!-- Letra de Suerte -->
+        <label for="letraSuerte">Letra de Suerte:</label>
+        <select id="letraSuerte" name="letraSuerte" required>
+          <!-- Se llenará dinámicamente -->
+        </select>
+
+        <!-- Suerte (combinación de Número y Letra) -->
+        <label for="suerte">Suerte:</label>
+        <input type="text" id="suerte" name="suerte" readonly required />
+
+        <!-- Tipo de Equipo Abandonado -->
+        <label for="tipoEquipo">Tipo de Equipo Abandonado:</label>
+        <select id="tipoEquipo" name="tipoEquipo" required>
+          <option value="moto">Moto</option>
+          <option value="automovil">Automóvil</option>
+          <option value="campero">Campero</option>
+          <option value="camion">Camión</option>
+          <option value="otro">Otro</option>
+        </select>
+
+        <!-- Marca -->
+        <label for="marca">Marca:</label>
+        <input type="text" id="marca" name="marca" required />
+
+        <!-- Color -->
+        <label for="color">Color:</label>
+        <input type="text" id="color" name="color" required />
+
+        <!-- Placa -->
+        <label for="placa">Placa:</label>
+        <input type="text" id="placa" name="placa" required />
+
+        <!-- Autoridad que Conoce el Caso -->
+        <label for="autoridadCargo">Autoridad que Conoce el Caso:</label>
+        <select id="autoridadCargo" name="autoridadCargo" required>
+          <option value="ponal">Policía Nacional</option>
+          <option value="ejercito">Ejército Nacional</option>
+          <option value="insponal">Institución Nacional</option>
+        </select>
+        <label for="autoridadCargo">Cargo:</label>
+        <input type="text" id="autoridadCargo" name="autoridadCargo" required />
+        
+        <label for="autoridadNombre">Nombre:</label>
+        <input
+          type="text"
+          id="autoridadNombre"
+          name="autoridadNombre"
+          required
+        />
+        <label for="autoridadUnidad">Unidad:</label>
+        <input
+          type="text"
+          id="autoridadUnidad"
+          name="autoridadUnidad"
+          required
+        />
+
+        <!-- Foto Opcional -->
+        <label for="foto">Foto (Opcional):</label>
+        <input type="file" id="foto" name="foto" accept="image/*" />
+
+        <!-- Botón de Enviar -->
+        <input type="submit" value="Enviar Formulario" />
+      </form>
+
+      <!-- Botones de Navegación -->
+      <div class="nav-buttons">
+        <a href="pagina-anterior.html" class="back-button">Página anterior</a>
+        <a href="iniciosesion.html" class="back-button">Salir</a>
+      </div>
+    </div>
+
+    <script src="vehiculosabandonados.js"></script>
+  </body>
+</html>

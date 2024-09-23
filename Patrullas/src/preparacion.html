@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulario de Preparación</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <img src="imagenes/LOGO.png" alt="Logo" class="logo" />
+    </header>
+    <div class="form-container">
+      <h1>Formulario de Preparación</h1>
+      <form id="preparation-form">
+        <div class="form-group">
+          <label for="hacienda">Hacienda:</label>
+          <input type="text" id="hacienda" name="hacienda" required />
+        </div>
+
+        <div class="form-group">
+          <label for="suerte">Suerte:</label>
+          <input type="text" id="suerte" name="suerte" required />
+        </div>
+
+        <div class="form-group">
+          <label for="numero-equipo">Número de Equipo:</label>
+          <input
+            type="number"
+            id="numero-equipo"
+            name="numero-equipo"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="ficha-operario">Ficha Operario:</label>
+          <input
+            type="text"
+            id="ficha-operario"
+            name="ficha-operario"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="numero-implemento">Número de Implemento:</label>
+          <input
+            type="number"
+            id="numero-implemento"
+            name="numero-implemento"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="stand-by">Stand By:</label>
+          <input type="text" id="stand-by" name="stand-by" required />
+        </div>
+
+        <!-- Campo para subir una foto -->
+        <div class="form-group">
+          <label for="foto">Foto:</label>
+          <input type="file" id="foto" name="foto" accept="image/*" required />
+        </div>
+
+        <button type="submit">Enviar</button>
+      </form>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

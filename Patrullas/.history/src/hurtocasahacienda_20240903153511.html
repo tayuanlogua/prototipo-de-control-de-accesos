@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulario de Hurto en Casa Hacienda</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <img src="imagenes/LOGO.png" alt="Logo" class="logo" />
+    </header>
+
+    <div class="form-container">
+      <h1>Formulario de Hurto en Casa Hacienda</h1>
+      <form
+        id="hurtoForm"
+        action="process_hurto.php"
+        method="POST"
+        enctype="multipart/form-data"
+      >
+        <!-- Fecha (automática) -->
+        <label for="fechaHora">Fecha y Hora:</label>
+        <input type="text" id="fechaHora" name="fechaHora" readonly />
+
+        <!-- Ubicación (automática) -->
+        <label for="ubicacion">Ubicación:</label>
+        <input type="text" id="ubicacion" name="ubicacion" readonly />
+
+        <!-- Hacienda -->
+        <label for="hacienda">Hacienda:</label>
+        <input type="text" id="hacienda" name="hacienda" required />
+
+        <!-- Reporte de los Hechos -->
+        <label for="reporteNombre">Nombre del Reportante:</label>
+        <input type="text" id="reporteNombre" name="reporteNombre" required />
+        <label for="reporteFecha">Fecha del Reporte:</label>
+        <input type="text" id="reporteFecha" name="reporteFecha" required />
+        <label for="reporteCargo">Cargo del Reportante:</label>
+        <input type="text" id="reporteCargo" name="reporteCargo" required />
+
+        <!-- Resumen de los Hechos -->
+        <label for="resumenHechos">Resumen de los Hechos:</label>
+        <textarea
+          id="resumenHechos"
+          name="resumenHechos"
+          rows="4"
+          required
+        ></textarea>
+
+        <!-- Autoridad que Conoce el Hecho -->
+        <label for="autoridadCargo">Autoridad que Conoce el Hecho:</label>
+        <select id="autoridadCargo" name="autoridadCargo" required>
+          <option value="ponal">Policía Nacional</option>
+          <option value="ejercito">Ejército Nacional</option>
+          <option value="insponal">Institución Nacional</option>
+        </select>
+        <label for="autoridadNombre">Nombre:</label>
+        <input
+          type="text"
+          id="autoridadNombre"
+          name="autoridadNombre"
+          required
+        />
+        <label for="autoridadUnidad">Unidad:</label>
+        <input
+          type="text"
+          id="autoridadUnidad"
+          name="autoridadUnidad"
+          required
+        />
+
+        <!-- Material Hurtado o Recuperado -->
+        <label for="materialHurtadoRecuperado"
+          >Material Hurtado o Recuperado:</label
+        >
+        <input
+          type="text"
+          id="materialHurtadoRecuperado"
+          name="materialHurtadoRecuperado"
+          required
+        />
+
+        <!-- Disposición Final -->
+        <label for="disposicionFinal">Disposición Final:</label>
+        <textarea
+          id="disposicionFinal"
+          name="disposicionFinal"
+          rows="4"
+          required
+        ></textarea>
+
+        <!-- Foto Opcional -->
+        <label for="foto">Foto (Opcional):</label>
+        <input type="file" id="foto" name="foto" accept="image/*" />
+
+        <!-- Botón de Enviar -->
+        <input type="submit" value="Enviar Formulario" />
+      </form>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

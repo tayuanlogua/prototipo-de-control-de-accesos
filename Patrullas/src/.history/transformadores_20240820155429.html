@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulario de transformadores</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="transformadores.js"></script>
+  </head>
+  <body>
+    <header class="header">
+      <img src="imagenes/LOGO.png" alt="Logo" class="logo login-logo" />
+    </header>
+    <div class="login-container">
+      <h1>Formulario de Transformadores</h1>
+      <form id="transormadores-form" enctype="multipart/form-data">
+        <div class="form-group">
+          <label for="ubicacion">Ubicación:</label>
+          <input type="text" id="ubicacion" name="ubicacion" required />
+        </div>
+
+        <div class="form-group">
+          <label for="date-time">Fecha y Hora:</label>
+          <input type="text" id="date-time" name="date-time" readonly />
+        </div>
+
+        <div class="form-group">
+          <label for="hacienda">Hacienda:</label>
+          <input type="text" id="hacienda" name="hacienda" required />
+        </div>
+
+        <div class="form-group">
+          <label for="suerte">Suerte en Consigna:</label>
+          <input type="text" id="suerte" name="suerte" required />
+        </div>
+
+        <div class="form-group">
+          <label for="numero-equipo">Número de Equipo:</label>
+          <input type="text" id="numero-equipo" name="numero-equipo" required />
+        </div>
+
+        <div class="form-group">
+          <label>Servido:</label>
+          <div class="radio-group">
+            <label for="servido-si">Sí</label>
+            <input
+              type="radio"
+              id="servido-si"
+              name="servido"
+              value="Sí"
+              required
+            />
+            <label for="servido-no">No</label>
+            <input
+              type="radio"
+              id="servido-no"
+              name="servido"
+              value="No"
+              required
+            />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="horometro">Horómetro:</label>
+          <input type="text" id="horometro" name="horometro" required />
+        </div>
+
+        <div class="form-group">
+          <label for="revoluciones">Revoluciones por Minuto:</label>
+          <input type="text" id="revoluciones" name="revoluciones" required />
+        </div>
+
+        <div class="form-group">
+          <label for="nivel-combustible">Nivel de Combustible:</label>
+          <input
+            type="text"
+            id="nivel-combustible"
+            name="nivel-combustible"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="operario">Operario:</label>
+          <input type="text" id="operario" name="operario" required />
+        </div>
+
+        <div class="form-group">
+          <label for="focha">Fecha y Hora:</label>
+          <input type="text" id="focha" name="focha" required />
+        </div>
+
+        <div class="form-group">
+          <label for="nombre-foto">Nombre de Foto:</label>
+          <input type="text" id="nombre-foto" name="nombre-foto" required />
+        </div>
+
+        <div class="form-group">
+          <label for="foto">Subir Foto:</label>
+          <input type="file" id="foto" name="foto" accept="image/*" />
+        </div>
+        <div class="form-group">
+          <label>Seguridad de Batería:</label>
+          <div class="radio-group">
+            <label for="bateria-si">Sí</label>
+            <input
+              type="radio"
+              id="bateria-si"
+              name="bateria"
+              value="Sí"
+              required
+            />
+            <label for="bateria-no">No</label>
+            <input
+              type="radio"
+              id="bateria-no"
+              name="bateria"
+              value="No"
+              required
+            />
+          </div>
+        </div>
+
+        <button type="submit">Enviar</button>
+      </form>
+    </div>
+  </body>
+</html>

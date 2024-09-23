@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulario Madurante</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <img src="imagenes/LOGO.png" alt="Logo" class="logo" />
+      <h1>Formulario Madurante</h1>
+    </header>
+
+    <div class="login-container">
+      <h1>Formulario de caña en pie</h1>
+      <form
+        id="maduranteForm"
+        action="process_madurante.php"
+        method="POST"
+        enctype="multipart/form-data"
+      >
+        <!-- Fecha (automática) -->
+        <label for="fechaHora">Fecha y Hora:</label>
+        <input type="text" id="fechaHora" name="fechaHora" readonly />
+
+        <!-- Ubicación (automática) -->
+        <label for="ubicacion">Ubicación:</label>
+        <input type="text" id="ubicacion" name="ubicacion" readonly />
+
+        <!-- Patrulla que realiza -->
+        <label for="patrulla">Patrulla que realiza:</label>
+        <input type="text" id="patrulla" name="patrulla" required />
+
+        <!-- Distrito -->
+        <label for="distrito">Distrito:</label>
+        <select id="distrito" name="distrito" required>
+          <option value="">Seleccione Distrito</option>
+          <option value="1">Distrito 1</option>
+          <option value="2">Distrito 2</option>
+          <option value="3">Distrito 3</option>
+          <option value="4">Distrito 4</option>
+          <option value="5">Distrito 5</option>
+        </select>
+
+        <!-- Hacienda -->
+        <label for="hacienda">Hacienda:</label>
+        <select id="hacienda" name="hacienda" required>
+          <option value="">Seleccione Hacienda</option>
+        </select>
+
+        <div class="form-group">
+          <label for="suerte">Suerte:</label>
+          <input type="text" id="suerte" name="suerte" required readonly />
+
+          <label for="numeroSuerte">Seleccione un número del 1 al 100:</label>
+          <select id="numeroSuerte"></select>
+
+          <label for="letraSuerte">Seleccione una letra de la A a la Z:</label>
+          <select id="letraSuerte"></select>
+        </div>
+
+        <!-- Empresa contratista -->
+        <label for="empresa_contratista">Empresa Contratista:</label>
+        <input
+          type="text"
+          id="empresa_contratista"
+          name="empresa_contratista"
+          required
+        />
+
+        <!-- Hora de inicio -->
+        <label for="hora_inicio">Hora de Inicio:</label>
+        <input type="time" id="hora_inicio" name="hora_inicio" required />
+
+        <!-- Hora de término -->
+        <label for="hora_termino">Hora de Término:</label>
+        <input type="time" id="hora_termino" name="hora_termino" required />
+
+        <!-- Botón de enviar -->
+        <button type="submit">Enviar</button>
+      </form>
+    </div>
+
+    <script src="madurante.js"></script>
+  </body>
+</html>

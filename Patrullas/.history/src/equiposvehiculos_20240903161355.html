@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulario de Equipos o Vehículos Abandonados</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <img src="imagenes/LOGO.png" alt="Logo" class="logo" />
+    </header>
+
+    <div class="form-container">
+      <h1>Formulario de Equipos o Vehículos Abandonados</h1>
+      <form
+        id="abandonadosForm"
+        action="process_abandonados.php"
+        method="POST"
+        enctype="multipart/form-data"
+      >
+        <!-- Fecha y Hora (automático) -->
+        <label for="fechaHora">Fecha y Hora:</label>
+        <input type="text" id="fechaHora" name="fechaHora" readonly />
+
+        <!-- Ubicación (automático) -->
+        <label for="ubicacion">Ubicación:</label>
+        <input type="text" id="ubicacion" name="ubicacion" readonly />
+
+        <!-- Hacienda -->
+        <label for="hacienda">Hacienda:</label>
+        <input type="text" id="hacienda" name="hacienda" required />
+
+        <!-- Suerte -->
+        <label for="suerte">Suerte:</label>
+        <input type="text" id="suerte" name="suerte" required />
+
+        <!-- Tipo de Equipo Abandonado -->
+        <label for="tipoEquipo">Tipo de Equipo Abandonado:</label>
+        <select id="tipoEquipo" name="tipoEquipo" required>
+          <option value="moto">Moto</option>
+          <option value="automovil">Automóvil</option>
+          <option value="campero">Campero</option>
+          <option value="camion">Camión</option>
+          <option value="tractor">Tractor</option>
+          <option value="otro">Otro</option>
+        </select>
+
+        <!-- Marca -->
+        <label for="marca">Marca:</label>
+        <input type="text" id="marca" name="marca" required />
+
+        <!-- Color -->
+        <label for="color">Color:</label>
+        <input type="text" id="color" name="color" required />
+
+        <!-- Placa -->
+        <label for="placa">Placa:</label>
+        <input type="text" id="placa" name="placa" required />
+
+        <!-- Autoridad que Conoce el Caso -->
+        <label for="autoridadCargo">Autoridad que Conoce el Caso:</label>
+        <select id="autoridadCargo" name="autoridadCargo" required>
+          <option value="ponal">Policía Nacional</option>
+          <option value="ejercito">Ejército Nacional</option>
+          <option value="insponal">Institución Nacional</option>
+        </select>
+        <label for="autoridadNombre">Nombre:</label>
+        <input
+          type="text"
+          id="autoridadNombre"
+          name="autoridadNombre"
+          required
+        />
+        <label for="autoridadUnidad">Unidad:</label>
+        <input
+          type="text"
+          id="autoridadUnidad"
+          name="autoridadUnidad"
+          required
+        />
+
+        <!-- Foto Opcional -->
+        <label for="foto">Foto (Opcional):</label>
+        <input type="file" id="foto" name="foto" accept="image/*" />
+
+        <!-- Botón de Enviar -->
+        <input type="submit" value="Enviar Formulario" />
+      </form>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

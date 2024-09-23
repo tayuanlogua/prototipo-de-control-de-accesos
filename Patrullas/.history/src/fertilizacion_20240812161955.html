@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulario de Fertilización</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <img src="logo.png" alt="Logo" class="logo" />
+    </header>
+    <div class="form-container">
+      <h1>Formulario de Fertilización</h1>
+      <form id="fertilization-form">
+        <div class="form-group">
+          <label for="location">Ubicación</label>
+          <input type="text" id="location" name="location" required />
+        </div>
+        <div class="form-group">
+          <label for="hacienda">Hacienda</label>
+          <input type="text" id="hacienda" name="hacienda" required />
+        </div>
+        <div class="form-group">
+          <label for="suerte">Suerte</label>
+          <input type="text" id="suerte" name="suerte" required />
+        </div>
+        <div class="form-group">
+          <label for="fertilization-front">Frente de Fertilización</label>
+          <input
+            type="text"
+            id="fertilization-front"
+            name="fertilization-front"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="cabo">Cabo</label>
+          <input type="text" id="cabo" name="cabo" required />
+        </div>
+        <div class="form-group">
+          <label for="equipment">Equipos</label>
+          <input type="text" id="equipment" name="equipment" required />
+        </div>
+        <div class="form-group">
+          <label for="number-of-equipment">Número de Equipos</label>
+          <input
+            type="number"
+            id="number-of-equipment"
+            name="number-of-equipment"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="toll">Tolvas</label>
+          <input type="text" id="toll" name="toll" required />
+        </div>
+        <div class="form-group">
+          <label for="photo">Foto</label>
+          <input type="file" id="photo" name="photo" accept="image/*" />
+        </div>
+        <button type="submit">Enviar</button>
+      </form>
+    </div>
+    <script src="scripts.js"></script>
+  </body>
+</html>

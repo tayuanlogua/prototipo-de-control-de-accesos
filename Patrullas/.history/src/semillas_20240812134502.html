@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulario de Frentes de Cosecha</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="form-container">
+      <h1>Formulario de Frentes de Cosecha</h1>
+      <form id="harvest-form">
+        <label for="fecha">Fecha:</label>
+        <input type="date" id="fecha" name="fecha" required />
+
+        <label for="ubicacion">Ubicación:</label>
+        <input type="text" id="ubicacion" name="ubicacion" required />
+
+        <label for="hora">Hora (automática):</label>
+        <input type="text" id="hora" name="hora" readonly />
+
+        <label for="hacienda">Hacienda:</label>
+        <input type="text" id="hacienda" name="hacienda" required />
+
+        <label for="suerte">Suerte:</label>
+        <input type="text" id="suerte" name="suerte" required />
+
+        <label for="paquetes-piso">Número de paquetes en piso:</label>
+        <input type="number" id="paquetes-piso" name="paquetes-piso" required />
+
+        <label for="paquetes-consigna"
+          >Número de paquetes recibidos en consigna:</label
+        >
+        <input
+          type="number"
+          id="paquetes-consigna"
+          name="paquetes-consigna"
+          required
+        />
+
+        <label for="foto">Foto:</label>
+        <input type="file" id="foto" name="foto" accept="image/*" required />
+
+        <button type="submit">Enviar</button>
+      </form>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

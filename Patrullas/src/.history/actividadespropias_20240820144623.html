@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulario de Actividades Propias</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        text-align: center;
+      }
+      .form-container {
+        background-color: #fff;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 600px;
+      }
+      h1 {
+        margin-bottom: 20px;
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        text-align: left;
+      }
+      label {
+        font-weight: bold;
+        color: #333;
+      }
+      input[type="text"],
+      input[type="number"] {
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 16px;
+        width: 100%;
+      }
+      button {
+        padding: 10px;
+        background-color: #ffd200;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s ease;
+      }
+      button:hover {
+        background-color: #003399;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="form-container">
+      <h1>Formulario de Actividades Propias</h1>
+      <form id="activities-form" action="submit-activities.html" method="post">
+        <label for="transformadores">Transformadores:</label>
+        <input
+          type="text"
+          id="transformadores"
+          name="transformadores"
+          required
+        />
+
+        <label for="motobombas">Motobombas:</label>
+        <input type="text" id="motobombas" name="motobombas" required />
+
+        <label for="chorras">Chorras:</label>
+        <input type="text" id="chorras" name="chorras" required />
+
+        <label for="semilla">Semilla:</label>
+        <input type="text" id="semilla" name="semilla" required />
+
+        <label for="frentes-de-cosecha">Frentes de Cosecha:</label>
+        <input
+          type="text"
+          id="frentes-de-cosecha"
+          name="frentes-de-cosecha"
+          required
+        />
+
+        <label for="subsuelo">Subsuelo:</label>
+        <input type="text" id="subsuelo" name="subsuelo" required />
+
+        <label for="preparacion">Preparación:</label>
+        <input type="text" id="preparacion" name="preparacion" required />
+
+        <label for="maquinaria-amarilla">Maquinaria Amarilla:</label>
+        <input
+          type="text"
+          id="maquinaria-amarilla"
+          name="maquinaria-amarilla"
+          required
+        />
+
+        <label for="suerte-en-consigna">Suerte en Consigna:</label>
+        <input
+          type="text"
+          id="suerte-en-consigna"
+          name="suerte-en-consigna"
+          required
+        />
+
+        <label for="fertilizacion">Fertilización:</label>
+        <input type="text" id="fertilizacion" name="fertilizacion" required />
+
+        <label for="cana-quemada-en-pie">Caña Quemada en Pie:</label>
+        <input
+          type="text"
+          id="cana-quemada-en-pie"
+          name="cana-quemada-en-pie"
+          required
+        />
+
+        <label for="huerto-de-cana">Huerto de Caña:</label>
+        <input type="text" id="huerto-de-cana" name="huerto-de-cana" required />
+
+        <label for="suministro-de-combustible"
+          >Suministro de Combustible:</label
+        >
+        <input
+          type="text"
+          id="suministro-de-combustible"
+          name="suministro-de-combustible"
+          required
+        />
+
+        <label for="fumigacion">Fumigación:</label>
+        <input type="text" id="fumigacion" name="fumigacion" required />
+
+        <label for="drones">Drones:</label>
+        <input type="text" id="drones" name="drones" required />
+
+        <button type="submit">Enviar</button>
+      </form>
+    </div>
+  </body>
+</html>

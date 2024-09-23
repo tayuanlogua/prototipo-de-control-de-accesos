@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulario de Suerte de Consigna</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <img src="imagenes/LOGO.png" alt="Logo" class="logo" />
+    </header>
+    <div class="form-container">
+      <h1>Formulario de Suerte de Consigna</h1>
+      <form id="consignment-form">
+        <div class="form-group">
+          <label for="consignment-code">Código de Consigna</label>
+          <input
+            type="text"
+            id="consignment-code"
+            name="consignment-code"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="hacienda-suerte">Hacienda o Suerte</label>
+          <input
+            type="text"
+            id="hacienda-suerte"
+            name="hacienda-suerte"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="consignment-type">Tipo de Consigna</label>
+          <select id="consignment-type" name="consignment-type" required>
+            <option value="">Seleccione un tipo</option>
+            <option value="theft">Hurto</option>
+            <option value="damage">Daños</option>
+            <option value="invasion">Invasión de Terreno</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="new-damages">Daños Nuevos</label>
+          <input type="text" id="new-damages" name="new-damages" />
+        </div>
+        <div class="form-group">
+          <label for="support">Apoyo</label>
+          <input type="text" id="support" name="support" />
+        </div>
+        <div class="form-group">
+          <label for="name">Nombre</label>
+          <input type="text" id="name" name="name" required />
+        </div>
+        <div class="form-group">
+          <label for="file">Ficha</label>
+          <input type="text" id="file" name="file" />
+        </div>
+        <div class="form-group invasion-group" style="display: none">
+          <label for="radication">¿Se radicó?</label>
+          <select id="radication" name="radication">
+            <option value="">Seleccione una opción</option>
+            <option value="yes">Sí</option>
+            <option value="no">No</option>
+          </select>
+        </div>
+        <button type="submit">Enviar</button>
+      </form>
+    </div>
+    <script src="scripts.js"></script>
+  </body>
+</html>

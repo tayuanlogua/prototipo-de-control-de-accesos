@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulario de Hurto de Equipos o Vehículo</title>
+    <style>
+      /* Estilos generales */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4; /* Fondo gris claro */
+  text-align: center;
+}
+
+header {
+  background-color: #FFD200;
+  padding: 20px;
+}
+
+.logo {
+  max-width: 150px;
+  height: auto;
+  display: inline-block;
+}
+
+/* Contenedor del formulario */
+.form-container {
+  max-width: 700px;
+  margin: 20px auto;
+  background-color: #fff;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  font-size: 1.6em;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Estilos para etiquetas y entradas del formulario */
+label {
+  display: block;
+  text-align: left;
+  margin-bottom: 8px;
+  color: #333;
+  font-size: 1em;
+  font-weight: 500;
+}
+
+input[type="text"],
+input[type="date"],
+select,
+input[type="file"],
+textarea {
+  width: 85%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  font-size: 1em;
+  background-color: #f9f9f9;
+  color: #333;
+  box-sizing: border-box;
+}
+
+textarea {
+  resize: vertical;
+}
+
+input[type="file"] {
+  padding: 0;
+}
+
+input[type="text"]:focus,
+input[type="date"]:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: #FFD200;
+  background-color: #fff;
+}
+
+/* Botón de envío */
+input[type="submit"] {
+  background-color: #FFD200;
+  color: rgb(58, 56, 56);
+  border: none;
+  padding: 12px 20px;
+  font-size: 1.1em;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 85%;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+input[type="submit"]:hover {
+  background-color: #464749;
+  color: rgb(228, 217, 217);
+}
+
+/* Adaptación responsiva */
+@media (max-width: 768px) {
+  .form-container {
+    padding: 10px;
+  }
+
+  input[type="submit"],
+  input[type="text"],
+  input[type="date"],
+  select,
+  textarea {
+    width: 95%;
+  }
+}
+
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <img src="imagenes/LOGO.png" alt="Logo" class="logo" />
+    </header>
+
+    <div class="form-container">
+      <h1>Formulario de Hurto de Equipos o Vehículo</h1>
+      <form
+        id="hurtoForm"
+        action="process_hurto.php"
+        method="POST"
+        enctype="multipart/form-data"
+      >
+        <!-- Fecha (automática) -->
+        <label for="fechaHora">Fecha y Hora:</label>
+        <input type="text" id="fechaHora" name="fechaHora" readonly />
+
+        <!-- Ubicación (automática) -->
+        <label for="ubicacion">Ubicación:</label>
+        <input type="text" id="ubicacion" name="ubicacion" readonly />
+
+        <!-- Equipo No. -->
+        <label for="equipoNo">Equipo No.:</label>
+        <input type="text" id="equipoNo" name="equipoNo" required />
+
+        <!-- Resumen de los Hechos -->
+        <label for="resumenHechos">Resumen de los Hechos:</label>
+        <textarea
+          id="resumenHechos"
+          name="resumenHechos"
+          rows="4"
+          required
+        ></textarea>
+
+        <!-- Operario -->
+        <label for="operarioNombre">Nombre del Operario:</label>
+        <input type="text" id="operarioNombre" name="operarioNombre" required />
+        <label for="operarioFicha">Ficha:</label>
+        <input type="text" id="operarioFicha" name="operarioFicha" required />
+        <label for="operarioCargo">Cargo:</label>
+        <input type="text" id="operarioCargo" name="operarioCargo" required />
+
+        <!-- Reportado por Funcionario -->
+        <label for="funcionarioFicha">Ficha del Funcionario:</label>
+        <input type="text" id="funcionarioFicha" name="funcionarioFicha" required />
+        <label for="funcionarioCargo">Cargo del Funcionario:</label>
+        <input type="text" id="funcionarioCargo" name="funcionarioCargo" required />
+        <label for="funcionarioNombre">Nombre del Funcionario:</label>
+        <input type="text" id="funcionarioNombre" name="funcionarioNombre" required />
+        <label for="comunidad">Comunidad:</label>
+        <input type="text" id="comunidad" name="comunidad" required />
+
+        <!-- Autoridad que Conduce el Caso -->
+        <label for="autoridadCargo">Autoridad que Conduce el Caso:</label>
+        <select id="autoridadCargo" name="autoridadCargo" required>
+          <option value="ponal">Policía Nacional</option>
+          <option value="ejercito">Ejército Nacional</option>
+          <option value="insponal">Institución Nacional</option>
+        </select>
+        <label for="cargoAutoridad">Cargo de la Autoridad:</label>
+        <input type="text" id="cargoAutoridad" name="cargoAutoridad" required />
+        <label for="nombreAutoridad">Nombre de la Autoridad:</label>
+        <input type="text" id="nombreAutoridad" name="nombreAutoridad" required />
+        <label for="unidad">Unidad:</label>
+        <input type="text" id="unidad" name="unidad" required />
+
+        <!-- Equipo Recuperado -->
+        <label for="equipoRecuperado">¿Equipo Recuperado?</label>
+        <select id="equipoRecuperado" name="equipoRecuperado" required>
+          <option value="si">Sí</option>
+          <option value="no">No</option>
+        </select>
+
+        <!-- Equipo Inmovilizado -->
+        <label for="equipoInmovilizado">¿Equipo Inmovilizado?</label>
+        <select id="equipoInmovilizado" name="equipoInmovilizado" required>
+          <option value="si">Sí</option>
+          <option value="no">No</option>
+        </select>
+
+        <!-- Disposición Final -->
+        <label for="disposicionFinal">Disposición Final:</label>
+        <textarea
+          id="disposicionFinal"
+          name="disposicionFinal"
+          rows="4"
+          required
+        ></textarea>
+
+        <!-- Foto Opcional -->
+        <label for="foto">Foto (Opcional):</label>
+        <input type="file" id="foto" name="foto" accept="image/*" />
+
+        <!-- Botón de Enviar -->
+        <input type="submit" value="Enviar Formulario" />
+      </form>
+    </div>
+    <script src="hurtoequiposvehiculos.js"></script>
+  </body>
+</html>
+
+
+

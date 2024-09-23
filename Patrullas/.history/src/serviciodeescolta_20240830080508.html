@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulario de Servicio de Escolta</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <img src="imagenes/LOGO.png" alt="Logo" class="logo" />
+    </header>
+    <div class="form-container">
+      <h1>Servicio de Escolta</h1>
+      <form id="escort-service-form">
+        <div class="form-group">
+          <label for="date">Fecha y Hora</label>
+          <input type="datetime-local" id="date" name="date" required />
+        </div>
+
+        <div class="form-group">
+          <label for="location">Ubicación</label>
+          <input type="text" id="location" name="location" required />
+        </div>
+
+        <div class="form-group">
+          <label for="personajes">Personajes (Hasta 10)</label>
+          <div class="multi-input-group" id="personajes-group">
+            <div class="multi-input-item">
+              <input
+                type="text"
+                name="personajes[]"
+                placeholder="Nombre del personaje"
+                required
+              />
+              <button type="button" class="remove-item">Eliminar</button>
+            </div>
+          </div>
+          <button
+            type="button"
+            class="add-more"
+            data-group="personajes-group"
+            data-limit="10"
+          >
+            Agregar personaje
+          </button>
+        </div>
+
+        <div class="form-group">
+          <label for="hacienda">Hacienda Visitada</label>
+          <input type="text" id="hacienda" name="hacienda" required />
+        </div>
+
+        <div class="form-group">
+          <label for="suertes">Suertes</label>
+          <input type="text" id="suertes" name="suertes" required />
+        </div>
+
+        <div class="form-group">
+          <label for="lugares">Lugares Visitados (Hasta 10)</label>
+          <div class="multi-input-group" id="lugares-group">
+            <div class="multi-input-item">
+              <input
+                type="text"
+                name="lugares[]"
+                placeholder="Nombre del lugar"
+                required
+              />
+              <button type="button" class="remove-item">Eliminar</button>
+            </div>
+          </div>
+          <button
+            type="button"
+            class="add-more"
+            data-group="lugares-group"
+            data-limit="10"
+          >
+            Agregar lugar
+          </button>
+        </div>
+
+        <div class="form-group">
+          <label for="vehiculos">Vehículos (Hasta 10 placas)</label>
+          <div class="multi-input-group" id="vehiculos-group">
+            <div class="multi-input-item">
+              <input
+                type="text"
+                name="vehiculos[]"
+                placeholder="Placa del vehículo"
+                required
+              />
+              <button type="button" class="remove-item">Eliminar</button>
+            </div>
+          </div>
+          <button
+            type="button"
+            class="add-more"
+            data-group="vehiculos-group"
+            data-limit="10"
+          >
+            Agregar vehículo
+          </button>
+        </div>
+
+        <div class="form-group">
+          <label for="patrullas">Patrullas Adicionales (Hasta 5)</label>
+          <div class="multi-input-group" id="patrullas-group">
+            <div class="multi-input-item">
+              <input
+                type="text"
+                name="patrullas[]"
+                placeholder="Nombre de la patrulla"
+                required
+              />
+              <button type="button" class="remove-item">Eliminar</button>
+            </div>
+          </div>
+          <button
+            type="button"
+            class="add-more"
+            data-group="patrullas-group"
+            data-limit="5"
+          >
+            Agregar patrulla
+          </button>
+        </div>
+
+        <div class="form-group">
+          <label for="end-time">Hora de Término</label>
+          <input type="datetime-local" id="end-time" name="end-time" required />
+        </div>
+
+        <div class="form-group">
+          <label for="photo">Foto</label>
+          <input
+            type="file"
+            id="photo"
+            name="photo"
+            accept="image/*"
+            required
+          />
+        </div>
+
+        <button type="submit">Enviar</button>
+      </form>
+    </div>
+
+    <script src="serviciodeescolta.js"></script>
+  </body>
+</html>

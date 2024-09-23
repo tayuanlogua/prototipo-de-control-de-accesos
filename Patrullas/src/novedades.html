@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulario de Novedades</title>
+   <style>
+  /* Estilos generales */
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-color: #f4f4f4; /* Fondo gris claro */
+  }
+
+  header {
+    background-color: #FFD200;
+    padding: 20px;
+  }
+
+  .logo {
+    max-width: 150px;
+    height: auto;
+    display: inline-block;
+  }
+
+  /* Estilo para el título */
+  h2 {
+    margin-top: 20px;
+    font-size: 1.8em;
+    color: #333;
+  }
+
+  /* Contenedor del formulario */
+  .login-container {
+    max-width: 500px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Estilos para la fecha, hora y ubicación */
+  .info-box {
+    margin-bottom: 20px;
+    font-size: 1.1em;
+    color: #333;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 4px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .info-box span {
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  /* Estilos para los botones de novedades y el botón de salir */
+  .novedad-button, .back-button {
+    text-decoration: none;
+    padding: 10px 15px;
+    background-color: #FFD200;
+    color: rgb(58, 56, 56);
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    font-size: 1em;
+    display: inline-block;
+    width: 100%;
+    max-width: 400px; /* Ancho máximo para los enlaces */
+    text-align: center; /* Centrar el texto dentro del botón */
+    margin-bottom: 10px;
+  }
+
+  .novedad-button:hover, .back-button:hover {
+    background-color: #464749;
+    color: rgb(228, 217, 217);
+  }
+
+  /* Adaptaciones responsivas */
+  @media (max-width: 768px) {
+    .novedad-button, .back-button {
+      width: 100%; /* Los enlaces ocupan todo el ancho en pantallas pequeñas */
+    }
+
+    .login-container {
+      padding: 10px;
+    }
+  }
+</style>
+
+    
+  </head>
+  <body>
+    <!-- Logo -->
+    <header>
+      <img class="logo" src="imagenes/LOGO.png" alt="Logo de la Empresa" />
+    </header>
+
+    <!-- Información de fecha, hora y ubicación -->
+    <div class="login-container">
+      <div class="info-box">
+        <span id="current-date">Fecha: </span>
+        <span id="current-time">Hora: </span>
+        <span id="location">Ubicación: </span>
+      </div>
+
+      <h2>Formularios de Novedades</h2>
+
+      <!-- Botones para cada tipo de novedad -->
+      <a href="hurtos.html" class="novedad-button">Hurtos</a>
+      <a href="bloqueovias.html" class="novedad-button">Bloqueos de Vías</a>
+      <a href="informaciones.html" class="novedad-button">Informaciones</a>
+      <a href="patrullas.html" class="novedad-button">Patrullas</a>
+      <a href="cadaveres.html" class="novedad-button">Cadáveres en Predios</a>
+      <a href="equiposabandonados.html" class="novedad-button">Equipos Abandonados</a>
+      <a href="vehiculosabandonados.html" class="novedad-button">Vehiculos Abandonados</a>
+     <!-- Botón para salir -->
+     <a href="patrulla.html" class="back-button">Pagina anterior</a> 
+     <a href="iniciosesion.html" class="back-button">Salir</a>
+    </div>
+
+    <script src="novedades.js"></script>
+  </body>
+</html>
+
+

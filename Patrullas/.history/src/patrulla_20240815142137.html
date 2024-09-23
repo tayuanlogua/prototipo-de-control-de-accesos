@@ -1,0 +1,26 @@
+// Obtener el formulario y los elementos de selección const formularioPatrullas
+= document.getElementById('patrullas-form'); const actividadPropia =
+document.getElementById('actividad-propia'); const novedades =
+document.getElementById('novedades'); // Evento de envío del formulario
+formularioPatrullas.addEventListener('submit', function(event) {
+event.preventDefault(); // Prevenir el envío del formulario por defecto //
+Validar que se haya seleccionado una actividad if (actividadPropia.value === '')
+{ alert('Por favor, seleccione una actividad propia.'); return; } // Determinar
+la URL de redirección basada en la actividad seleccionada let url; switch
+(actividadPropia.value) { case 'transformadores': url =
+'formulario-transformadores.html'; break; case 'motobombas': url =
+'formulario-motobombas.html'; break; case 'chorras': url =
+'formulario-chorras.html'; break; case 'semilla': url =
+'formulario-semilla.html'; break; case 'frente-cosecha': url =
+'formulario-frente-cosecha.html'; break; case 'subsuelo': url =
+'formulario-subsuelo.html'; break; case 'preparacion': url =
+'formulario-preparacion.html'; break; case 'maquinaria-amarilla': url =
+'formulario-maquinaria-amarilla.html'; break; case 'suertes-consigna': url =
+'formulario-suertes-consigna.html'; break; case 'cana-en-pie': url =
+'formulario-cana-en-pie.html'; break; case 'fertilizacion': url =
+'formulario-fertilizacion.html'; break; case 'hurto-cana': url =
+'formulario-hurto-cana.html'; break; case 'fumigacion': url =
+'formulario-fumigacion.html'; break; case 'drones': url =
+'formulario-drones.html'; break; default: alert('Actividad no válida.'); return;
+} // Redirigir al usuario al formulario seleccionado window.location.href = url;
+});

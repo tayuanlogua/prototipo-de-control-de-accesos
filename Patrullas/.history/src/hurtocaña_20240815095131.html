@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulario de Hurto de Caña</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="form-container">
+      <h1>Formulario de Hurto de Caña</h1>
+      <form id="hurtoForm">
+        <label for="fecha">Fecha del Reporte:</label>
+        <input type="text" id="fecha" name="fecha" readonly />
+
+        <label for="hora">Hora del Reporte:</label>
+        <input type="text" id="hora" name="hora" readonly />
+
+        <label for="ubicacion">Ubicación del Hurto:</label>
+        <input type="text" id="ubicacion" name="ubicacion" required />
+
+        <label for="hacienda">Hacienda:</label>
+        <input type="text" id="hacienda" name="hacienda" required />
+
+        <label for="suerte">Suerte:</label>
+        <input type="text" id="suerte" name="suerte" required />
+
+        <label for="tipoHurto">Tipo de Hurto:</label>
+        <select id="tipoHurto" name="tipoHurto" required>
+          <option value="trapiche">Trapiche</option>
+          <option value="cuido">Cuido</option>
+          <option value="semilla">Semilla</option>
+        </select>
+
+        <label for="novedad">Novedad:</label>
+        <textarea id="novedad" name="novedad"></textarea>
+
+        <label for="observaciones">Observaciones:</label>
+        <textarea id="observaciones" name="observaciones"></textarea>
+
+        <label for="foto">Subir Foto:</label>
+        <input type="file" id="foto" name="foto" accept="image/*" />
+
+        <button type="submit">Enviar</button>
+      </form>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

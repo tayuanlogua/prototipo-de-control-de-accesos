@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulario de Frentes de Cosecha</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <img src="imagenes/LOGO.png" alt="Logo" class="logo" />
+    </header>
+
+    <div class="form-container">
+      <h1>Formulario de Frentes de Cosecha</h1>
+      <form id="harvest-form">
+        <div class="form-group">
+          <label for="ubicacion">Ubicación:</label>
+          <input type="text" id="ubicacion" name="ubicacion" required />
+        </div>
+
+        <div class="form-group">
+          <label for="date-time">Fecha y Hora:</label>
+          <input type="text" id="date-time" name="date-time" readonly />
+        </div>
+
+        <label for="suerte">Suerte:</label>
+        <input type="text" id="suerte" name="suerte" required />
+
+        <label for="hacienda">Hacienda:</label>
+        <input type="text" id="hacienda" name="hacienda" required />
+
+        <label for="numero-frente">Número de Frente:</label>
+        <input type="number" id="numero-frente" name="numero-frente" required />
+
+        <label for="canas-largas">Caña Larga:</label>
+        <input type="number" id="canas-largas" name="canas-largas" required />
+
+        <label for="manual-mecanizado">Manual/Mecanizado:</label>
+        <select id="manual-mecanizado" name="manual-mecanizado" required>
+          <option value="manual">Manual</option>
+          <option value="mecanizado">Mecanizado</option>
+        </select>
+
+        <label for="laborando">Laborando:</label>
+        <select id="laborando" name="laborando" required>
+          <option value="si">Sí</option>
+          <option value="no">No</option>
+        </select>
+
+        <label for="seguridad">Seguridad (Permanente/Revistas):</label>
+        <select id="seguridad" name="seguridad" required>
+          <option value="fija">Fija</option>
+          <option value="revistas">Revistas</option>
+        </select>
+
+        <label for="novedades">Novedades:</label>
+        <textarea id="novedades" name="novedades" rows="4" required></textarea>
+
+        <label for="archivo">Archivo:</label>
+        <input
+          type="file"
+          id="archivo"
+          name="archivo"
+          accept=".pdf, .doc, .docx, .xls, .xlsx, .jpg, .jpeg, .png"
+          required
+        />
+
+        <button type="submit">Enviar</button>
+      </form>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

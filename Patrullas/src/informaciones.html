@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulario de Información</title>
+  <style>
+    /* Estilos generales */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  background-color: #f4f4f4; /* Fondo gris claro */
+}
+
+header {
+  background-color: #FFD200;
+  padding: 20px;
+}
+
+.logo {
+  max-width: 150px;
+  height: auto;
+  display: inline-block;
+}
+
+/* Contenedor del formulario */
+.form-container {
+  max-width: 600px;
+  margin: 20px auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  font-size: 1.5em;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Estilos para el formulario */
+label {
+  display: block;
+  text-align: left;
+  margin-bottom: 8px;
+  color: #333;
+  font-size: 1em; /* Tamaño de fuente más grande */
+  font-weight: 500; /* Peso de fuente ligeramente reducido */
+}
+
+input[type="text"],
+select,
+input[type="file"],
+textarea {
+  width: 80%; /* Ajuste para que el campo sea más grande */
+  padding: 10px; /* Padding aumentado para hacer los campos más altos */
+  margin-bottom: 20px; /* Espaciado adicional */
+  border: 2px solid #ccc; /* Borde más grueso */
+  border-radius: 8px; /* Bordes más redondeados */
+  font-size: 1em; /* Tamaño de fuente más grande */
+  background-color: #f9f9f9;
+  color: #333; /* Color gris claro para el texto */
+  font-weight: 400; /* Peso de fuente ligeramente reducido */
+  box-sizing: border-box; /* Asegura que el padding y border no afecten el tamaño total del elemento */
+}
+
+textarea {
+  resize: vertical; /* Permite redimensionar verticalmente el área de texto */
+}
+
+/* Estilos de enfoque */
+input[type="text"]:focus,
+select:focus,
+input[type="file"]:focus,
+textarea:focus {
+  outline: none;
+  border-color: #FFD200;
+  background-color: #fff; /* Hace que se resalten mejor al enfocarse */
+}
+
+/* Botón de envío */
+input[type="submit"] {
+  background-color: #FFD200;
+  color: rgb(58, 56, 56);
+  border: none;
+  padding: 10px 20px;
+  font-size: 1.1em;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 80%;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+input[type="submit"]:hover {
+  background-color: #464749;
+  color: rgb(228, 217, 217);
+}
+
+/* Botones de navegación */
+.button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.button-container button {
+  background-color: #FFD200;
+  color: rgb(58, 56, 56);
+  border: none;
+  padding: 10px 20px;
+  margin: 10px 0;
+  font-size: 1.1em;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 80%;
+  font-weight: 500;
+}
+
+.button-container button:hover {
+  background-color: #464749;
+  color: rgb(228, 217, 217);
+}
+
+/* Adaptaciones responsivas */
+@media (max-width: 768px) {
+  .form-container {
+    padding: 10px;
+  }
+
+  input[type="submit"],
+  .button-container button {
+    width: 100%;
+  }
+
+  input[type="text"],
+  select,
+  input[type="file"],
+  textarea {
+    width: 95%; /* Hacer los campos más anchos en pantallas pequeñas */
+  }
+}
+
+  </style>
+  </head>
+  <body>
+    <header class="header">
+      <img src="imagenes/LOGO.png" alt="Logo" class="logo" />
+    </header>
+
+    <div class="form-container">
+      <h1>Formulario de Información</h1>
+      <form
+        id="informacionForm"
+        action="process_informacion.php"
+        method="POST"
+        enctype="multipart/form-data"
+      >
+        <!-- Fecha (automática) -->
+        <label for="fechaHora">Fecha y Hora:</label>
+        <input type="text" id="fechaHora" name="fechaHora" readonly />
+
+        <!-- Ubicación (automática) -->
+        <label for="ubicacion">Ubicación:</label>
+        <input type="text" id="ubicacion" name="ubicacion" readonly />
+
+        <!-- Tipo de Información -->
+        <label for="tipoInformacion">Tipo de Información:</label>
+        <select id="tipoInformacion" name="tipoInformacion" required>
+          <option value="delincuencia_comun">Delincuencia Común</option>
+          <option value="delincuencia_organizada">
+            Delincuencia Organizada
+          </option>
+          <option value="comunidad">Comunidad</option>
+          <option value="invasion">Invasión</option>
+        </select>
+
+        <!-- Descripción de la Información -->
+        <label for="descripcionInformacion"
+          >Descripción de la Información:</label
+        >
+        <textarea
+          id="descripcionInformacion"
+          name="descripcionInformacion"
+          rows="4"
+          required
+        ></textarea>
+
+        <!-- Tipo de Informante -->
+        <label for="tipoInformante">Tipo de Informante:</label>
+        <select id="tipoInformante" name="tipoInformante" required>
+          <option value="empleado">Empleado</option>
+          <option value="particular">Particular</option>
+          <option value="comunidad">Comunidad</option>
+          <option value="fuerza_publica">Fuerza Pública</option>
+        </select>
+
+        <!-- Subir Foto -->
+        <label for="foto">Subir Foto:</label>
+        <input type="file" id="foto" name="foto" accept="image/*" required />
+
+        <!-- Botón de Enviar -->
+        <input type="submit" value="Enviar Formulario" />
+      </form>
+
+      <!-- Botones de Salir y Página Anterior -->
+      <div class="button-container">
+        <button onclick="window.history.back();">Página Anterior</button>
+        <button onclick="window.close();">Salir</button>
+      </div>
+    </div>
+
+    <script src="informaciones.js"></script>
+  </body>
+</html>
+

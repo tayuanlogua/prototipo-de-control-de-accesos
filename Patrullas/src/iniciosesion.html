@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inicio de Sesión</title>
+    <style>
+/* Estilos generales para el body */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center; /* Centrar horizontalmente */
+  align-items: center; /* Centrar verticalmente */
+  height: 100vh; /* Altura completa de la ventana */
+  flex-direction: column; /* Para apilar el encabezado y el contenedor de inicio de sesión */
+}
+
+/* Encabezado con logo */
+.header {
+  background-color: #ffd200; /* Fondo amarillo para el logo */
+  padding: 50px 0; /* Mayor padding para el encabezado */
+  text-align: center;
+  width: 1300%; /* Ancho completo */
+  position: relative; /* Para posicionar el logo dentro del encabezado */
+  margin-bottom: 30px; /* Espacio debajo del encabezado */
+}
+
+/* Ajustar logo y su posición */
+.logo {
+  width: 150px; /* Tamaño del logo ajustado */
+  height: auto;
+  position: absolute; /* Posicionamiento absoluto para moverlo */
+  top: 20px; /* Mover el logo hacia arriba desde el borde superior */
+  left: 50%; /* Centrando horizontalmente */
+  transform: translateX(-50%); /* Ajustar la posición exacta en el centro */
+}
+
+/* Estilo para la hora automática */
+#current-time {
+  text-align: center;
+  font-size: 18px; /* Aumentar el tamaño del texto */
+  color: #333;
+  margin-bottom: 30px; /* Mayor margen inferior */
+}
+
+/* Contenedor del formulario de inicio de sesión */
+.login-container {
+  background-color: #ffffff;
+  max-width: 400px; /* Ancho máximo del formulario */
+  width: 100%; /* Ancho completo hasta el máximo */
+  padding: 20px; /* Espacio interno */
+  border-radius: 8px; /* Bordes redondeados */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+  text-align: center; /* Centrar el contenido dentro del contenedor */
+  box-sizing: border-box; /* Incluir padding en el ancho total */
+}
+
+/* Estilo para el título del formulario */
+.login-container h2 {
+  color: #333;
+  margin-bottom: 20px; /* Espacio debajo del título */
+}
+
+/* Estilo para las etiquetas y campos del formulario */
+.login-container label {
+  display: block;
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 8px; /* Espacio debajo de las etiquetas */
+}
+
+.login-container input {
+  width: calc(100% - 24px); /* Ancho completo menos padding */
+  padding: 12px; /* Espacio interno */
+  border: 1px solid #ccc; /* Borde del campo */
+  border-radius: 4px; /* Bordes redondeados */
+  margin-bottom: 20px; /* Espacio debajo de los campos */
+  font-size: 16px;
+  box-sizing: border-box; /* Incluir padding en el ancho total */
+}
+
+/* Estilo para el botón de envío */
+.login-container button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 4px;
+  background-color: #ffd200; /* Color de fondo del botón */
+  color: #fff; /* Color del texto */
+  font-size: 16px;
+  cursor: pointer; /* Cambiar el cursor al pasar por encima */
+  transition: background-color 0.3s;
+}
+
+.login-container button:hover {
+  background-color: #e0b800; /* Color de fondo al pasar por encima */
+}
+
+/* Responsive design para móviles */
+@media (max-width: 480px) {
+  .login-container {
+    width: 90%; /* Ajustar el ancho del contenedor en dispositivos móviles */
+  }
+
+  .login-container h2 {
+    font-size: 20px; /* Ajustar tamaño del texto */
+  }
+
+  .login-container label,
+  .login-container input,
+  .login-container button {
+    font-size: 14px; /* Ajustar tamaño del texto */
+  }
+}
+
+
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <img src="imagenes/LOGO.png" alt="Logo" class="logo login-logo" />
+    </header>
+    <div class="login-container">
+      <h2>Inicio de Sesión</h2>
+      <form id="login-form" action="patrulla.html" method="post">
+        <label for="username">Usuario:</label>
+        <input type="text" id="username" name="username" required />
+
+        <label for="password">Contraseña:</label>
+        <input type="password" id="password" name="password" required />
+
+        <button type="submit">Iniciar Sesión</button>
+      </form>
+    </div>
+  </body>
+</html>
+

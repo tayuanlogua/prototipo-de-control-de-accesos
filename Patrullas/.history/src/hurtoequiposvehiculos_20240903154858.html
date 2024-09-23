@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulario de Hurto de Equipos o Vehículo</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <img src="imagenes/LOGO.png" alt="Logo" class="logo" />
+    </header>
+
+    <div class="form-container">
+      <h1>Formulario de Hurto de Equipos o Vehículo</h1>
+      <form
+        id="hurtoForm"
+        action="process_hurto.php"
+        method="POST"
+        enctype="multipart/form-data"
+      >
+        <!-- Fecha (automática) -->
+        <label for="fechaHora">Fecha y Hora:</label>
+        <input type="text" id="fechaHora" name="fechaHora" readonly />
+
+        <!-- Ubicación (automática) -->
+        <label for="ubicacion">Ubicación:</label>
+        <input type="text" id="ubicacion" name="ubicacion" readonly />
+
+        <!-- Equipo No. -->
+        <label for="equipoNo">Equipo No.:</label>
+        <input type="text" id="equipoNo" name="equipoNo" required />
+
+        <!-- Resumen de los Hechos -->
+        <label for="resumenHechos">Resumen de los Hechos:</label>
+        <textarea
+          id="resumenHechos"
+          name="resumenHechos"
+          rows="4"
+          required
+        ></textarea>
+
+        <!-- Operario -->
+        <label for="operarioNombre">Nombre del Operario:</label>
+        <input type="text" id="operarioNombre" name="operarioNombre" required />
+        <label for="operarioFicha">Ficha:</label>
+        <input type="text" id="operarioFicha" name="operarioFicha" required />
+        <label for="operarioCargo">Cargo:</label>
+        <input type="text" id="operarioCargo" name="operarioCargo" required />
+
+        <!-- Autoridad que Conoce el Hecho -->
+        <label for="autoridadCargo">Autoridad que Conoce el Hecho:</label>
+        <select id="autoridadCargo" name="autoridadCargo" required>
+          <option value="ponal">Policía Nacional</option>
+          <option value="ejercito">Ejército Nacional</option>
+          <option value="insponal">Institución Nacional</option>
+        </select>
+        <label for="autoridadNombre">Nombre:</label>
+        <input
+          type="text"
+          id="autoridadNombre"
+          name="autoridadNombre"
+          required
+        />
+        <label for="autoridadUnidad">Unidad:</label>
+        <input
+          type="text"
+          id="autoridadUnidad"
+          name="autoridadUnidad"
+          required
+        />
+
+        <!-- Equipo Recuperado -->
+        <label for="equipoRecuperado">¿Equipo Recuperado?</label>
+        <select id="equipoRecuperado" name="equipoRecuperado" required>
+          <option value="si">Sí</option>
+          <option value="no">No</option>
+        </select>
+
+        <!-- Equipo Inmovilizado -->
+        <label for="equipoInmovilizado">¿Equipo Inmovilizado?</label>
+        <select id="equipoInmovilizado" name="equipoInmovilizado" required>
+          <option value="si">Sí</option>
+          <option value="no">No</option>
+        </select>
+
+        <!-- Disposición Final -->
+        <label for="disposicionFinal">Disposición Final:</label>
+        <textarea
+          id="disposicionFinal"
+          name="disposicionFinal"
+          rows="4"
+          required
+        ></textarea>
+
+        <!-- Foto Opcional -->
+        <label for="foto">Foto (Opcional):</label>
+        <input type="file" id="foto" name="foto" accept="image/*" />
+
+        <!-- Botón de Enviar -->
+        <input type="submit" value="Enviar Formulario" />
+      </form>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

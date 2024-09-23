@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulario de Información</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <img src="imagenes/LOGO.png" alt="Logo" class="logo" />
+    </header>
+
+    <div class="form-container">
+      <h1>Formulario de Información</h1>
+      <form
+        id="informacionForm"
+        action="process_informacion.php"
+        method="POST"
+        enctype="multipart/form-data"
+      >
+        <!-- Fecha (automática) -->
+        <label for="fechaHora">Fecha y Hora:</label>
+        <input type="text" id="fechaHora" name="fechaHora" readonly />
+
+        <!-- Ubicación (automática) -->
+        <label for="ubicacion">Ubicación:</label>
+        <input type="text" id="ubicacion" name="ubicacion" readonly />
+
+        <!-- Tipo de Información -->
+        <label for="tipoInformacion">Tipo de Información:</label>
+        <select id="tipoInformacion" name="tipoInformacion" required>
+          <option value="delincuencia_comun">Delincuencia Común</option>
+          <option value="delincuencia_organizada">
+            Delincuencia Organizada
+          </option>
+          <option value="comunidad">Comunidad</option>
+          <option value="invasion">Invasión</option>
+        </select>
+
+        <!-- Descripción de la Información -->
+        <label for="descripcionInformacion"
+          >Descripción de la Información:</label
+        >
+        <textarea
+          id="descripcionInformacion"
+          name="descripcionInformacion"
+          rows="4"
+          required
+        ></textarea>
+
+        <!-- Suministra Información -->
+        <label for="tipoInformante">Tipo de Informante:</label>
+        <select id="tipoInformante" name="tipoInformante" required>
+          <option value="empleado">Empleado</option>
+          <option value="particular">Particular</option>
+          <option value="comunidad">Comunidad</option>
+          <option value="fuerza_publica">Fuerza Pública</option>
+        </select>
+
+        <!-- Botón de Enviar -->
+        <input type="submit" value="Enviar Formulario" />
+      </form>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

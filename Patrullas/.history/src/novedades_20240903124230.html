@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulario de Novedades</title>
+  </head>
+  <body>
+    <h2>Formulario de Novedades</h2>
+    <form action="" method="POST">
+      <label for="novedades">Selecciona una opción:</label>
+      <select id="novedades" name="novedades" onchange="redirigir()">
+        <option value="">-- Seleccionar --</option>
+        <option value="hurtos">Hurtos</option>
+        <option value="bloqueos_de_vias">Bloqueos de Vías</option>
+        <option value="informaciones">Informaciones</option>
+      </select>
+    </form>
+
+    <script>
+      function redirigir() {
+        var seleccion = document.getElementById("novedades").value;
+
+        if (seleccion === "hurtos") {
+          window.location.href = "hurto_form.html"; // Redirige a la página de hurtos
+        } else if (seleccion === "bloqueos_de_vias") {
+          window.location.href = "bloqueos_vias_form.html"; // Redirige a la página de bloqueos de vías
+        } else if (seleccion === "informaciones") {
+          window.location.href = "informaciones_form.html"; // Redirige a la página de informaciones
+        }
+      }
+    </script>
+  </body>
+</html>

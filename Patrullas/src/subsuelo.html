@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulario de Subsuelo</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <img src="imagenes/LOGO.png" alt="Logo" class="logo" />
+    </header>
+
+    <div class="form-container">
+      <h1>Formulario de Subsuelo</h1>
+      <form id="subsuelo-form">
+        <label for="hacienda">Hacienda:</label>
+        <input type="text" id="hacienda" name="hacienda" required />
+
+        <label for="suerte">Suerte:</label>
+        <input type="text" id="suerte" name="suerte" required />
+
+        <label for="numero-equipo">Número de Equipo:</label>
+        <input type="number" id="numero-equipo" name="numero-equipo" required />
+
+        <label for="ficha-operario">Ficha Operario:</label>
+        <input type="text" id="ficha-operario" name="ficha-operario" required />
+
+        <label for="numero-implemento">Número de Implemento:</label>
+        <input
+          type="number"
+          id="numero-implemento"
+          name="numero-implemento"
+          required
+        />
+
+        <label for="stand-by">Stand By:</label>
+        <select id="stand-by" name="stand-by" required>
+          <option value="si">Sí</option>
+          <option value="no">No</option>
+        </select>
+
+        <!-- Campo para subir una foto -->
+        <label for="foto">Foto:</label>
+        <input type="file" id="foto" name="foto" accept="image/*" required />
+
+        <button type="submit">Enviar</button>
+      </form>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

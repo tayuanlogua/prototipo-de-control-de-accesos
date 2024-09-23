@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulario de Bloqueo de Vías</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <img src="imagenes/LOGO.png" alt="Logo" class="logo" />
+    </header>
+
+    <div class="form-container">
+      <h1>Formulario de Bloqueo de Vías</h1>
+      <form
+        id="bloqueoForm"
+        action="process_bloqueo.php"
+        method="POST"
+        enctype="multipart/form-data"
+      >
+        <!-- Fecha y Hora (automático) -->
+        <label for="fechaHora">Fecha y Hora:</label>
+        <input type="text" id="fechaHora" name="fechaHora" readonly />
+
+        <!-- Ubicación (automático) -->
+        <label for="ubicacion">Ubicación:</label>
+        <input type="text" id="ubicacion" name="ubicacion" readonly />
+
+        <!-- Ruta Bloqueada -->
+        <label for="rutaBloqueada">Ruta Bloqueada:</label>
+        <input type="text" id="rutaBloqueada" name="rutaBloqueada" required />
+
+        <!-- Causa del Bloqueo -->
+        <label for="causaBloqueo">Causa del Bloqueo:</label>
+        <select id="causaBloqueo" name="causaBloqueo" required>
+          <option value="comunidad">Comunidad</option>
+          <option value="accidente">Accidente</option>
+          <option value="seguridad">Seguridad</option>
+          <option value="deportiva">Deportiva</option>
+        </select>
+
+        <!-- Tramo Bloqueado -->
+        <label for="tramoBloqueado">Tramo Bloqueado:</label>
+        <input
+          type="text"
+          id="tramoBloqueado"
+          name="tramoBloqueado"
+          placeholder="De hasta"
+          required
+        />
+
+        <!-- Equipos en el Bloqueo -->
+        <label for="equiposBloqueo"
+          >Equipos en el Bloqueo (puede agregar varios):</label
+        >
+        <div id="equiposContainer">
+          <input type="text" name="equiposBloqueo[]" placeholder="Equipo" />
+        </div>
+        <button type="button" id="addEquipo">Agregar Equipo</button>
+
+        <!-- Alce que Afecta -->
+        <label for="alceAfecta">Alce que Afecta:</label>
+        <input
+          type="text"
+          id="alceAfecta"
+          name="alceAfecta"
+          placeholder="F1 a F6, F3 a F19, etc."
+          required
+        />
+
+        <!-- Labor que Afecta -->
+        <label for="laborAfecta">Labor que Afecta:</label>
+        <input type="text" id="laborAfecta" name="laborAfecta" required />
+
+        <!-- Descripción -->
+        <label for="descripcion">Descripción:</label>
+        <textarea
+          id="descripcion"
+          name="descripcion"
+          rows="4"
+          required
+        ></textarea>
+
+        <!-- Motivo de la Protesta -->
+        <label for="motivoProtesta">Motivo de la Protesta:</label>
+        <textarea
+          id="motivoProtesta"
+          name="motivoProtesta"
+          rows="4"
+          required
+        ></textarea>
+
+        <!-- Ruta Alterna -->
+        <label for="rutaAlterna">Ruta Alterna:</label>
+        <input type="text" id="rutaAlterna" name="rutaAlterna" required />
+
+        <!-- Foto Opcional -->
+        <label for="foto">Foto (Opcional):</label>
+        <input type="file" id="foto" name="foto" accept="image/*" />
+
+        <!-- Botón de Enviar -->
+        <input type="submit" value="Enviar Formulario" />
+      </form>
+    </div>
+
+    <script src="hurtoequiposvehiculos.js"></script>
+  </body>
+</html>

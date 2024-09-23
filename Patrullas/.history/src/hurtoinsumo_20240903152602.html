@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulario de Hurto de Insumos</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <img src="imagenes/LOGO.png" alt="Logo" class="logo" />
+    </header>
+
+    <div class="form-container">
+      <h1>Formulario de Hurto de Insumos</h1>
+      <form
+        id="hurtoForm"
+        action="process_hurto.php"
+        method="POST"
+        enctype="multipart/form-data"
+      >
+        <!-- Fecha (automática) -->
+        <label for="fechaHora">Fecha y Hora:</label>
+        <input type="text" id="fechaHora" name="fechaHora" readonly />
+
+        <!-- Ubicación (automática) -->
+        <label for="ubicacion">Ubicación:</label>
+        <input type="text" id="ubicacion" name="ubicacion" readonly />
+
+        <!-- Insumos Hurtados -->
+        <label for="insumosHurtados">Insumos Hurtados:</label>
+        <input
+          type="text"
+          id="insumosHurtados"
+          name="insumosHurtados"
+          required
+        />
+
+        <!-- Unidad de Medida -->
+        <label for="unidadMedida">Unidad de Medida:</label>
+        <select id="unidadMedida" name="unidadMedida" required>
+          <option value="bulto">Bulto</option>
+          <option value="litros">Litros</option>
+          <option value="unidad">Unidad</option>
+          <option value="toneladas">Toneladas</option>
+        </select>
+
+        <!-- Resumen de los Hechos -->
+        <label for="resumenHechos">Resumen de los Hechos:</label>
+        <textarea
+          id="resumenHechos"
+          name="resumenHechos"
+          rows="4"
+          required
+        ></textarea>
+
+        <!-- Personal Cabaña Comprometido -->
+        <label for="personalCabanhaNombre"
+          >Personal Cabaña Comprometido (Nombre):</label
+        >
+        <input
+          type="text"
+          id="personalCabanhaNombre"
+          name="personalCabanhaNombre"
+          required
+        />
+        <label for="personalCabanhaFicha">Ficha:</label>
+        <input
+          type="text"
+          id="personalCabanhaFicha"
+          name="personalCabanhaFicha"
+          required
+        />
+        <label for="personalCabanhaCargo">Cargo:</label>
+        <input
+          type="text"
+          id="personalCabanhaCargo"
+          name="personalCabanhaCargo"
+          required
+        />
+
+        <!-- Personal Particular Comprometido -->
+        <label for="personalParticularNombre"
+          >Personal Particular Comprometido (Nombre):</label
+        >
+        <input
+          type="text"
+          id="personalParticularNombre"
+          name="personalParticularNombre"
+          required
+        />
+        <label for="personalParticularCC">CC:</label>
+        <input
+          type="text"
+          id="personalParticularCC"
+          name="personalParticularCC"
+          required
+        />
+
+        <!-- Quien Reporta los Hechos -->
+        <label for="quienReportaNombre"
+          >Quien Reporta los Hechos (Nombre):</label
+        >
+        <input
+          type="text"
+          id="quienReportaNombre"
+          name="quienReportaNombre"
+          required
+        />
+        <label for="quienReportaFicha">Ficha:</label>
+        <input
+          type="text"
+          id="quienReportaFicha"
+          name="quienReportaFicha"
+          required
+        />
+        <label for="quienReportaCargo">Cargo:</label>
+        <input
+          type="text"
+          id="quienReportaCargo"
+          name="quienReportaCargo"
+          required
+        />
+
+        <!-- Autoridad que Conoce el Caso -->
+        <label for="autoridadCargo">Autoridad que Conoce el Caso:</label>
+        <select id="autoridadCargo" name="autoridadCargo" required>
+          <option value="ponal">Policía Nacional</option>
+          <option value="ejercito">Ejército Nacional</option>
+          <option value="insponal">Institución Nacional</option>
+        </select>
+        <label for="autoridadNombre">Nombre:</label>
+        <input
+          type="text"
+          id="autoridadNombre"
+          name="autoridadNombre"
+          required
+        />
+        <label for="autoridadUnidad">Unidad:</label>
+        <input
+          type="text"
+          id="autoridadUnidad"
+          name="autoridadUnidad"
+          required
+        />
+
+        <!-- Material Recuperado -->
+        <label for="materialRecuperado">¿Material Recuperado?</label>
+        <select id="materialRecuperado" name="materialRecuperado" required>
+          <option value="si">Sí</option>
+          <option value="no">No</option>
+        </select>
+
+        <!-- Material Decomisado -->
+        <label for="materialDecomisado">¿Material Decomisado?</label>
+        <select id="materialDecomisado" name="materialDecomisado" required>
+          <option value="si">Sí</option>
+          <option value="no">No</option>
+        </select>
+
+        <!-- Ubicación Final -->
+        <label for="ubicacionFinal">Ubicación Final:</label>
+        <textarea
+          id="ubicacionFinal"
+          name="ubicacionFinal"
+          rows="4"
+          required
+        ></textarea>
+
+        <!-- Foto Opcional -->
+        <label for="foto">Foto (Opcional):</label>
+        <input type="file" id="foto" name="foto" accept="image/*" />
+
+        <!-- Botón de Enviar -->
+        <input type="submit" value="Enviar Formulario" />
+      </form>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

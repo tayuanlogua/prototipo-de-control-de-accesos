@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulario de Novedades</title>
+    <style>
+      .hidden {
+        display: none;
+      }
+      select {
+        margin-top: 10px;
+      }
+    </style>
+    <script>
+      function mostrarOpciones() {
+        var seleccion = document.getElementById("novedades").value;
+        var hurtos = document.getElementById("hurtos");
+        var informaciones = document.getElementById("informaciones");
+
+        hurtos.classList.add("hidden");
+        informaciones.classList.add("hidden");
+
+        if (seleccion === "hurtos") {
+          hurtos.classList.remove("hidden");
+        } else if (seleccion === "informaciones") {
+          informaciones.classList.remove("hidden");
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <h2>Formulario de Novedades</h2>
+    <form action="" method="POST">
+      <label for="novedades">Selecciona una opción:</label>
+      <select id="novedades" name="novedades" onchange="mostrarOpciones()">
+        <option value="">-- Seleccionar --</option>
+        <option value="hurtos">Hurtos</option>
+        <option value="bloqueos_de_vias">Bloqueos de Vías</option>
+        <option value="informaciones">Informaciones</option>
+      </select>
+
+      <!-- Sección de Hurtos -->
+      <div id="hurtos" class="hidden">
+        <label for="tipo_hurto">Tipo de Hurto:</label>
+        <select id="tipo_hurto" name="tipo_hurto">
+          <option value="hurto_implementos">Hurto de Implementos</option>
+          <option value="hurto_elementos">Hurto de Elementos</option>
+          <option value="hurto_insumos">Hurto de Insumos</option>
+          <option value="hurto_casa_hacienda">Hurto de Casa de Hacienda</option>
+          <option value="hurto_equipos_vehiculos">
+            Hurto de Equipos o Vehículos
+          </option>
+        </select>
+      </div>
+
+      <!-- Sección de Informaciones -->
+      <div id="informaciones" class="hidden">
+        <label for="tipo_informacion">Tipo de Información:</label>
+        <select id="tipo_informacion" name="tipo_informacion">
+          <option value="delincuencia_comun">Delincuencia Común</option>
+          <option value="delincuencia_organizada">
+            Delincuencia Organizada
+          </option>
+          <option value="patrullas">Patrullas</option>
+          <option value="cadaveres_predios">Cadáveres en Predios</option>
+          <option value="equipos_abandonados">Equipos Abandonados</option>
+          <option value="vehiculos_abandonados">Vehículos Abandonados</option>
+        </select>
+      </div>
+
+      <br /><br />
+      <button type="submit">Enviar</button>
+    </form>
+  </body>
+</html>

@@ -1,0 +1,72 @@
+/* Estilos generales para el body */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+/* Estilos para el header */
+header {
+  background-color: #ffd200; /* Fondo amarillo */
+  padding: 20px;
+  text-align: center;
+}
+
+header .logo img {
+  max-width: 150px; /* Tamaño máximo del logo */
+  height: auto;
+}
+
+header h1 {
+  color: #333;
+  font-size: 24px;
+  margin-top: 10px;
+}
+
+/* Estilos para el contenedor de iconos */
+.iconos-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.icono {
+  background-color: #ffffff;
+  border: 2px solid #ffd200; /* Borde amarillo */
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 150px; /* Ajusta el tamaño máximo de los iconos */
+  flex: 1;
+}
+
+.icono img {
+  max-width: 100%; /* Ajusta el tamaño de las imágenes dentro de los iconos */
+  height: auto;
+}
+
+.icono p {
+  margin: 10px 0 0;
+  font-size: 14px;
+  color: #333;
+}
+
+/* Responsive design para dispositivos móviles */
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 20px;
+  }
+
+  .icono {
+    flex: 1 1 100%; /* Los iconos ocupan toda la anchura en pantallas pequeñas */
+    max-width: none; /* Elimina el límite de ancho */
+  }
+
+  .icono p {
+    font-size: 12px;
+  }
+}

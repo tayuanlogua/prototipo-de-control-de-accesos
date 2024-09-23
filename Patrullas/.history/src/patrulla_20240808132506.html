@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inicio de Sesión y Patrullas</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <div id="login-section" class="container">
+      <h2>Inicio de Sesión</h2>
+      <form id="login-form">
+        <label for="username">Usuario:</label>
+        <input type="text" id="username" name="username" required />
+
+        <label for="password">Contraseña:</label>
+        <input type="password" id="password" name="password" required />
+
+        <button type="submit">Iniciar Sesión</button>
+      </form>
+    </div>
+
+    <div id="patrullas-section" class="container" style="display: none">
+      <h1>Patrullas</h1>
+      <div class="pattern-section">
+        <h2>Actividades Propias o Novedades en Actividades Propias</h2>
+        <button id="toggle-form">Mostrar Formularios</button>
+        <div id="form-container" class="form-container" style="display: none">
+          <div class="form-group" id="form-revista-hacienda">
+            <h3>Revista Hacienda</h3>
+            <textarea name="revista-hacienda"></textarea>
+          </div>
+          <div class="form-group" id="form-transformadores">
+            <h3>Transformadores</h3>
+            <textarea name="transformadores"></textarea>
+          </div>
+          <div class="form-group" id="form-moto-bombas">
+            <h3>Moto Bombas</h3>
+            <textarea name="moto-bombas"></textarea>
+          </div>
+          <div class="form-group" id="form-chorras">
+            <h3>Chorras</h3>
+            <textarea name="chorras"></textarea>
+          </div>
+          <div class="form-group" id="form-semilla">
+            <h3>Semilla</h3>
+            <textarea name="semilla"></textarea>
+          </div>
+          <div class="form-group" id="form-frentes-cosecha">
+            <h3>Frentes de Cosecha</h3>
+            <textarea name="frentes-cosecha"></textarea>
+          </div>
+          <div class="form-group" id="form-subsuelo">
+            <h3>Subsuelo</h3>
+            <textarea name="subsuelo"></textarea>
+          </div>
+          <div class="form-group" id="form-preparacion">
+            <h3>Preparación</h3>
+            <textarea name="preparacion"></textarea>
+          </div>
+          <div class="form-group" id="form-maquinaria-amarilla">
+            <h3>Maquinaria Amarilla</h3>
+            <textarea name="maquinaria-amarilla"></textarea>
+          </div>
+          <div class="form-group" id="form-suerte-consigna">
+            <h3>Suerte en Consigna</h3>
+            <textarea name="suerte-consigna"></textarea>
+          </div>
+          <div class="form-group" id="form-fertilizacion">
+            <h3>Fertilización</h3>
+            <textarea name="fertilizacion"></textarea>
+          </div>
+          <div class="form-group" id="form-cana-quemada">
+            <h3>Caña Quemada en Pie</h3>
+            <textarea name="cana-quemada"></textarea>
+          </div>
+          <div class="form-group" id="form-hurto-cana">
+            <h3>Hurto de Caña</h3>
+            <textarea name="hurto-cana"></textarea>
+          </div>
+          <div class="form-group" id="form-suministros-combustible">
+            <h3>Suministros de Combustible</h3>
+            <textarea name="suministros-combustible"></textarea>
+          </div>
+          <div class="form-group" id="form-fumigacion">
+            <h3>Fumigación</h3>
+            <textarea name="fumigacion"></textarea>
+          </div>
+          <div class="form-group" id="form-drones">
+            <h3>Drones</h3>
+            <textarea name="drones"></textarea>
+          </div>
+          <button type="submit">Enviar</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

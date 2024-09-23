@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulario de Actividades Propias</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <img src="imagenes/LOGO.png" alt="Logo" class="logo" />
+    </header>
+    <div class="login-container">
+      <h1>Formulario de Actividades Propias</h1>
+      <form id="activities-form" enctype="multipart/form-data">
+        <div class="form-group">
+          <label for="ubicacion">Ubicación:</label>
+          <input type="text" id="ubicacion" name="ubicacion" required />
+        </div>
+
+        <div class="form-group">
+          <label for="date-time">Fecha y Hora:</label>
+          <input
+            type="datetime-local"
+            id="date-time"
+            name="date-time"
+            readonly
+          />
+        </div>
+
+        <button type="submit">Enviar</button>
+      </form>
+
+      <div class="activities-form">
+        <a href="transformadores.html">Transformadores</a>
+        <a href="motobombas.html">Motobombas</a>
+        <a href="chorras.html">Chorras</a>
+        <a href="semillas.html">Semilla</a>
+        <a href="frentesdecosecha.html">Frentes de Cosecha</a>
+        <a href="subsuelo.html">Subsuelo</a>
+        <a href="preparacion.html">Preparación</a>
+        <a href="maquinariaamarilla.html">Maquinaria Amarilla</a>
+        <a href="suerteconsigna.html">Suerte en Consigna</a>
+        <a href="fertilizacion.html">Fertilización</a>
+        <a href="cañaenpie.html">Caña Quemada en Pie</a>
+        <a href="huertocaña.html">Huerto de Caña</a>
+        <a href="suministrocombustible.html">Suministro de Combustible</a>
+        <a href="fumigacion.html">Fumigación</a>
+        <a href="drones.html">Drones</a>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

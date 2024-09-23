@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulario de Fumigación</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <img src="imagenes/LOGO.png" alt="Logo" class="logo" />
+    </header>
+    <div class="form-container">
+      <h1>Formulario de Fumigación</h1>
+      <form id="fumigation-form">
+        <!-- Fecha y Hora -->
+        <div class="form-group">
+          <label for="fechaHora">Fecha y Hora:</label>
+          <input type="text" id="fechaHora" name="fechaHora" readonly />
+        </div>
+
+        <!-- Ubicación (automática) y Distrito -->
+        <div class="form-group">
+          <label for="ubicacion">Ubicación:</label>
+          <input type="text" id="ubicacion" name="ubicacion" readonly />
+
+          <label for="distrito">Distrito:</label>
+          <select id="distrito" name="distrito" required>
+            <option value="">Seleccione</option>
+            <option value="1">Distrito 1</option>
+            <option value="2">Distrito 2</option>
+            <option value="3">Distrito 3</option>
+            <option value="4">Distrito 4</option>
+            <option value="5">Distrito 5</option>
+            <option value="proveedores">Proveedores</option>
+          </select>
+        </div>
+
+        <!-- Hacienda -->
+        <div class="form-group">
+          <label for="hacienda">Hacienda:</label>
+          <select id="hacienda" name="hacienda" required>
+            <option value="">Seleccione Distrito primero</option>
+          </select>
+        </div>
+
+        <!-- Suerte -->
+        <div class="form-group">
+          <label for="suerte">Suerte:</label>
+          <input type="text" id="suerte" name="suerte" required readonly />
+
+          <label for="numeroSuerte">Seleccione un número del 1 al 100:</label>
+          <select id="numeroSuerte"></select>
+
+          <label for="letraSuerte">Seleccione una letra de la A a la Z:</label>
+          <select id="letraSuerte"></select>
+        </div>
+
+        <!-- Novedad -->
+        <div class="form-group">
+          <label for="novelty">Novedad:</label>
+          <input type="text" id="novelty" name="novelty" required />
+        </div>
+
+        <!-- Apoyo de la Hacienda -->
+        <div class="form-group">
+          <label for="support">Apoyo de la Hacienda (Sí/No):</label>
+          <select id="support" name="support" required>
+            <option value="">Seleccione</option>
+            <option value="yes">Sí</option>
+            <option value="no">No</option>
+          </select>
+        </div>
+
+        <!-- Detalles del Apoyo (se muestra solo si la respuesta es "Sí") -->
+        <div class="form-group" id="support-details" style="display: none">
+          <label for="support-name">Nombre del Apoyo:</label>
+          <input type="text" id="support-name" name="support-name" />
+        </div>
+
+        <!-- Ficha -->
+        <div class="form-group">
+          <label for="file">Ficha:</label>
+          <input type="text" id="file" name="file" />
+        </div>
+
+        <!-- Foto -->
+        <div class="form-group">
+          <label for="photo">Foto:</label>
+          <input type="file" id="photo" name="photo" accept="image/*" />
+        </div>
+
+        <!-- Descripción de Novedad -->
+        <div class="form-group">
+          <label for="novelty-description">Describir Novedad:</label>
+          <textarea
+            id="novelty-description"
+            name="novelty-description"
+            rows="4"
+            required
+          ></textarea>
+        </div>
+
+        <button type="submit">Enviar</button>
+      </form>
+    </div>
+    <script src="fumigacion.js"></script>
+  </body>
+</html>

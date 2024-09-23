@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulario de Drones</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <img src="imagenes/LOGO.png" alt="Logo" class="logo" />
+    </header>
+    <div class="form-container">
+      <h1>Formulario de Drones</h1>
+      <form id="drones-form">
+        <div class="form-group">
+          <label for="location">Ubicación</label>
+          <input type="text" id="location" name="location" required />
+        </div>
+        <div class="form-group">
+          <label for="date">Fecha</label>
+          <input type="date" id="date" name="date" required />
+        </div>
+        <div class="form-group">
+          <label for="hacienda">Hacienda</label>
+          <input type="text" id="hacienda" name="hacienda" required />
+        </div>
+        <div class="form-group">
+          <label for="suerte">Suerte</label>
+          <input type="text" id="suerte" name="suerte" required />
+        </div>
+        <div class="form-group">
+          <label for="contractor-company">Empresa Contratista</label>
+          <input
+            type="text"
+            id="contractor-company"
+            name="contractor-company"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="contractor-supervisor">Cabo de Empresa Contratista</label>
+          <input
+            type="text"
+            id="contractor-supervisor"
+            name="contractor-supervisor"
+            required
+          />
+        </div>
+        <div class="form-group radio-group">
+          <label>¿Se realizó?</label>
+          <input
+            type="radio"
+            id="performed-yes"
+            name="performed"
+            value="si"
+            required
+          />
+          <label for="performed-yes">Sí</label>
+          <input
+            type="radio"
+            id="performed-no"
+            name="performed"
+            value="no"
+            required
+          />
+          <label for="performed-no">No</label>
+        </div>
+        <div class="form-group radio-group">
+          <label>¿Se efectuó?</label>
+          <input
+            type="radio"
+            id="executed-yes"
+            name="executed"
+            value="si"
+            required
+          />
+          <label for="executed-yes">Sí</label>
+          <input
+            type="radio"
+            id="executed-no"
+            name="executed"
+            value="no"
+            required
+          />
+          <label for="executed-no">No</label>
+        </div>
+        <div class="form-group">
+          <label for="observations">Observaciones</label>
+          <textarea id="observations" name="observations"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="photo">Foto</label>
+          <input type="file" id="photo" name="photo" accept="image/*" />
+        </div>
+        <button type="submit">Enviar</button>
+      </form>
+    </div>
+    <script src="scripts.js"></script>
+  </body>
+</html>

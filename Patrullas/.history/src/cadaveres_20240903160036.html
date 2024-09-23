@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulario de Cadáveres Encontrados</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <img src="imagenes/LOGO.png" alt="Logo" class="logo" />
+    </header>
+
+    <div class="form-container">
+      <h1>Formulario de Cadáveres Encontrados</h1>
+      <form
+        id="cadaveresForm"
+        action="process_cadaveres.php"
+        method="POST"
+        enctype="multipart/form-data"
+      >
+        <!-- Fecha (automática) -->
+        <label for="fechaHora">Fecha y Hora:</label>
+        <input type="text" id="fechaHora" name="fechaHora" readonly />
+
+        <!-- Ubicación (automática) -->
+        <label for="ubicacion">Ubicación:</label>
+        <input type="text" id="ubicacion" name="ubicacion" readonly />
+
+        <!-- Hacienda -->
+        <label for="hacienda">Hacienda:</label>
+        <input type="text" id="hacienda" name="hacienda" required />
+
+        <!-- Suerte -->
+        <label for="suerte">Suerte:</label>
+        <input type="text" id="suerte" name="suerte" required />
+
+        <!-- Sexo -->
+        <label for="sexo">Sexo:</label>
+        <select id="sexo" name="sexo" required>
+          <option value="femenino">Femenino</option>
+          <option value="masculino">Masculino</option>
+        </select>
+
+        <!-- Raza -->
+        <label for="raza">Raza:</label>
+        <select id="raza" name="raza" required>
+          <option value="negro">Negro</option>
+          <option value="blanco">Blanco</option>
+          <option value="indio">Indio</option>
+          <option value="mulato">Mulato</option>
+        </select>
+
+        <!-- Reportado por Funcionario -->
+        <label for="funcionarioFicha">Ficha del Funcionario:</label>
+        <input
+          type="text"
+          id="funcionarioFicha"
+          name="funcionarioFicha"
+          required
+        />
+        <label for="funcionarioCargo">Cargo del Funcionario:</label>
+        <input
+          type="text"
+          id="funcionarioCargo"
+          name="funcionarioCargo"
+          required
+        />
+        <label for="funcionarioNombre">Nombre del Funcionario:</label>
+        <input
+          type="text"
+          id="funcionarioNombre"
+          name="funcionarioNombre"
+          required
+        />
+        <label for="comunidad">Comunidad:</label>
+        <input type="text" id="comunidad" name="comunidad" required />
+
+        <!-- Autoridad que Conduce el Caso -->
+        <label for="autoridadCargo">Autoridad que Conduce el Caso:</label>
+        <select id="autoridadCargo" name="autoridadCargo" required>
+          <option value="ponal">Policía Nacional</option>
+          <option value="ejercito">Ejército Nacional</option>
+          <option value="insponal">Institución Nacional</option>
+        </select>
+
+        <!-- Foto Opcional -->
+        <label for="foto">Foto (Opcional):</label>
+        <input type="file" id="foto" name="foto" accept="image/*" />
+
+        <!-- Botón de Enviar -->
+        <input type="submit" value="Enviar Formulario" />
+      </form>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
